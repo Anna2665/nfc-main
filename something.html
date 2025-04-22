@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TapSynch</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+<!--Top bar socials -->
+.topbar {
+  margin-top:0px;
+  background-color: #0f172a;
+  padding: 1.5rem 0rem;
+  text-align: right;
+  border-bottom: 1px solid #334155;
+  li{
+    float:left;
+  }
+  ul{
+    list-style-type:none;
+  }
+}
+
+.topbar a {
+  color: #94a3b8;
+  text-align:center;
+  margin-left: 16px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+
+
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #0f172a;
+      color: #f8fafc;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(90deg, #1d5639, #77dd77);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #cbd5e1;
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    .card {
+      flex: 1 1 300px;
+      background-color: #1e293b;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(126, 204, 105, 0.2);
+    }
+
+    .card h3 {
+      color: #60a5fa;
+      margin-bottom: 1rem;
+    }
+
+    .cta {
+      background-color: #81c568;
+      color: white;
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 8px;
+      display: inline-block;
+      margin-top: 2rem;
+      transition: background 0.3s ease;
+    }
+
+    .cta:hover {
+      background-color: #7bdb91;
+    }
+
+    footer {
+      background-color: #1e293b;
+      text-align: center;
+      padding: 2rem;
+      font-size: 0.9rem;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .features {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+    <div class="topbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      </div>
+
+  <header>
+    <h1>SyncTap</h1>
+    <p>Instantly share your contact with just a tap.</p>
+  </header>
+
+  <section>
+    <h2>What We Offer</h2>
+    <div class="features">
+      <div class="card">
+        <h3>Smart Business Cards</h3>
+        <p>Customizable NFC cards that instantly send your contact info, website, or social media with one tap.</p>
+      </div>
+      <div class="card">
+        <h3>NFC Tags & Stickers</h3>
+        <p>Stick NFC tags on products, posters, or even your phone — perfect for marketing, info, and interactions.</p>
+      </div>
+      <div class="card">
+        <h3>Contactless Solutions</h3>
+        <p>Offer seamless, modern networking with NFC tech — no app required, just tap & connect.</p>
+      </div>
+    </div>
+
+    <a href="mailto:contact@nfcconnect.com" class="cta">Get Started</a>
+  </section>
+
+  <section>
+    <h2>Why NFC?</h2>
+    <p style="max-width: 700px; margin: 2rem auto; text-align: center;">
+      NFC (Near Field Communication) is the fastest way to share data. No need for apps, logins, or scanners.
+      With one tap, users can access your contact info, portfolio, menu, or business page. Future-proof your networking today.
+    </p>
+  </section>
+
+  <footer>
+    &copy; 2025 NFC Connect — Powered by Tap Tech. All rights reserved.
+  </footer>
+
+</body>
+</html>
