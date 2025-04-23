@@ -7,68 +7,94 @@
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f9f9f9;
+      background-color: #000000;
       margin: 0;
       padding: 0;
+      color: #cceacc;
     }
+
     .container {
       max-width: 800px;
       margin: 40px auto;
       padding: 20px;
-      background: #ffffff;
+      background: #0d1f0d;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
     }
+
     h2, h3 {
       text-align: center;
-      color: #333;
+      color: #9fff9c;
     }
+
     .address {
       margin: 20px 0;
       padding: 15px;
-      background-color: #e9f5ff;
-      border-left: 5px solid #007BFF;
+      background-color: #111;
+      border-left: 5px solid #00ff00;
       border-radius: 5px;
     }
+
+    .address p {
+      color: #d4ffd4;
+    }
+
     .form-group {
       margin-bottom: 15px;
     }
+
     label {
       font-weight: bold;
       display: block;
       margin-bottom: 5px;
+      color: #bfffbf;
     }
+
     input, textarea {
       width: 100%;
       padding: 10px;
       border-radius: 5px;
-      border: 1px solid #ccc;
+      border: 1px solid #33cc33;
+      background-color: #000;
+      color: #b8ffb8;
       box-sizing: border-box;
     }
+
     textarea {
       height: 120px;
       resize: vertical;
     }
+
+    input:focus, textarea:focus {
+      border-color: #00ff00;
+      outline: none;
+    }
+
     button {
-      background-color: #477c47;
+      background-color: #00aa00;
       color: #fff;
       padding: 12px 20px;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-size: 16px;
+      width: 100%;
     }
+
     button:hover {
-      background-color: #0056b3;
+      background-color: #00cc00;
     }
+
     .status {
       text-align: center;
       margin-top: 20px;
       font-weight: bold;
     }
+
     .success {
-      color: green;
+      color: #00ff00;
     }
+
     .error {
       color: red;
     }

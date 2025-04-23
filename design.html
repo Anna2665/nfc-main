@@ -5,13 +5,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NFC Card Designer | Free Mockup</title>
     <style>
+                
+           /*Company name and menu*/
+
+            .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1d5639;
+            padding: 1rem 2rem;
+            flex-wrap: wrap;
+            }
+
+            .logotitle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            }
+
+            .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2.5rem;
+            text-align:center;
+            flex-wrap: wrap;
+            justify-content:center;
+            }
+
+            .menu li a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            font-size:1.2rem;
+        }
+
+            .menu li a:hover {
+            color: #8ad981;
+            }
+
+            h1{
+                color:#ffffff
+            }
+
         :root {
             --primary-color: #25D366;
             --secondary-color: #075E54;
             --dark-bg: #111;
             --light-text: #fff;
             --card-bg: #1e1e1e;
-            --border-color: #fbe5e5;
+            --border-color: #6fa676;
         }
         
         * {
@@ -34,7 +79,7 @@
         }
         
         .header-banner {
-            background-color: var(--secondary-color);
+            background-color: #1d5639;
             color: white;
             padding: 15px;
             text-align: center;
@@ -94,8 +139,9 @@
         }
         
         .card-display {
-            width: 100%;
+            width: 200%;
             height: 200px;
+            width:380px;
             background-color: #2a2a2a;
             border-radius: 10px;
             margin-bottom: 20px;
@@ -181,6 +227,7 @@
             margin-top: 10px;
         }
         
+        
         .color-option {
             width: 40px;
             height: 40px;
@@ -245,6 +292,28 @@
     </style>
 </head>
 <body>
+
+    <body>
+
+        <div class="main">
+            <div class="logotitle">
+            <img src="icons8-card-64.png" alt="Logo" />
+            <h1>AsyncTap</h1>
+            </div>
+        
+            
+            <div class="menu">
+                <ul>
+                    <li><a href="website.html">Home</a></li>
+                    <li><a href="designcard.html">Design Your Card</a></li>
+                    <li><a href="#Shop">Shop</a></li>
+                    <li><a href="phones.html">Compatible Phones</a></li>
+                    <li><a href="#Login">Login</a></li>
+                    <li><a href="contactinfo.html">Contact</a></li>
+                    <li><a href="#GetDesign">Get Design</a></li>
+            </div>
+        </div>
+
     <div class="container">
         <div class="header-banner">
             <h2>Get a free custom design mockup!</h2>
@@ -334,7 +403,6 @@
     <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
-    
     <script>
         // Switch between front and back card views
         function switchCardSide(side) {
