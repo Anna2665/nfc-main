@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Device Compatibility | Async Tap NFC</title>
+    <style>
+        :root {
+            --primary-color: #25D366;
+            --secondary-color: #075E54;
+            --dark-bg: #111;
+            --light-text: #fff;
+            --card-bg: #1e1e1e;
+            --border-color: #333;
+            --search-bg: #222;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .search-container {
+            max-width: 800px;
+            margin: 0 auto 40px;
+        }
+        
+        .search-box {
+            position: relative;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 15px 20px;
+            font-size: 18px;
+            background-color: var(--search-bg);
+            border: 2px solid var(--border-color);
+            border-radius: 50px;
+            color: var(--light-text);
+            outline: none;
+        }
+        
+        .search-box input:focus {
+            border-color: var(--primary-color);
+        }
+        
+        .search-icon {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #777;
+        }
+        
+        .brand-section {
+            margin-bottom: 50px;
+        }
+        
+        .brand-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .brand-logo {
+            width: 50px;
+            height: 50px;
+            margin-right: 15px;
+            border-radius: 50%;
+            background-color: var(--card-bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .brand-title {
+            font-size: 1.8rem;
+        }
+        
+        .brand-subtitle {
+            color: #aaa;
+            margin-top: 5px;
+            font-size: 1rem;
+        }
+        
+        .devices-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 15px;
+        }
+        
+        .device-item {
+            background-color: var(--card-bg);
+            padding: 15px;
+            border-radius: 8px;
+            transition: all 0.3s;
+            border: 1px solid transparent;
+        }
+        
+        .device-item:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 50px;
+            color: #777;
+            font-size: 1.2rem;
+            grid-column: 1 / -1;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .devices-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Search Your Device</h1>
+            <p>Check if your device is compatible with Async Tap NFC Business Card</p>
+        </header>
+        
+        <div class="search-container">
+            <div class="search-box">
+                <input type="text" id="deviceSearch" placeholder="Enter device name to search">
+                <div class="search-icon">🔍</div>
+            </div>
+        </div>
+        
+        <!-- Apple Devices -->
+        <div class="brand-section" id="apple">
+            <div class="brand-header">
+                <div class="brand-logo">A</div>
+                <div>
+                    <div class="brand-title">Apple</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on iOS Devices (Apple)</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="apple-devices">
+                <div class="device-item">iPhone 7</div>
+                <div class="device-item">iPhone 7 Plus</div>
+                <div class="device-item">iPhone 8</div>
+                <div class="device-item">iPhone 8 Plus</div>
+                <div class="device-item">iPhone X</div>
+                <div class="device-item">iPhone XS</div>
+                <div class="device-item">iPhone XS Max</div>
+                <div class="device-item">iPhone XR</div>
+                <div class="device-item">iPhone SE (2020)</div>
+                <div class="device-item">iPhone 11</div>
+                <div class="device-item">iPhone 11 Pro</div>
+                <div class="device-item">iPhone 11 Pro Max</div>
+                <div class="device-item">iPhone 12</div>
+                <div class="device-item">iPhone 12 mini</div>
+                <div class="device-item">iPhone 12 Pro</div>
+                <div class="device-item">iPhone 12 Pro Max</div>
+                <div class="device-item">iPhone 13</div>
+                <div class="device-item">iPhone 13 mini</div>
+                <div class="device-item">iPhone 13 Pro</div>
+                <div class="device-item">iPhone 13 Pro Max</div>
+            </div>
+        </div>
+        
+        <!-- Samsung Devices -->
+        <div class="brand-section" id="samsung">
+            <div class="brand-header">
+                <div class="brand-logo">S</div>
+                <div>
+                    <div class="brand-title">Samsung</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Samsung Devices (Android)</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="samsung-devices">
+                <div class="device-item">Galaxy SIII</div>
+                <div class="device-item">Galaxy S4</div>
+                <div class="device-item">Galaxy S5</div>
+                <div class="device-item">Galaxy S6</div>
+                <div class="device-item">Galaxy S6 Edge</div>
+                <div class="device-item">Galaxy S6 Edge+</div>
+                <div class="device-item">Galaxy S7</div>
+                <div class="device-item">Galaxy S7 Edge</div>
+                <div class="device-item">Galaxy S8</div>
+                <div class="device-item">Galaxy S8+</div>
+                <div class="device-item">Galaxy S9</div>
+                <div class="device-item">Galaxy S9+</div>
+                <div class="device-item">Galaxy S10</div>
+                <div class="device-item">Galaxy S10 Plus</div>
+                <div class="device-item">Galaxy S21 Plus</div>
+                <div class="device-item">Galaxy S20 Plus</div>
+                <div class="device-item">Galaxy S20 Ultra</div>
+                <div class="device-item">Galaxy S21 Ultra</div>
+                <div class="device-item">Galaxy S20 FE</div>
+                <div class="device-item">Galaxy Note 3</div>
+                <div class="device-item">Galaxy Note 3 NEO</div>
+                <div class="device-item">Note 5</div>
+                <div class="device-item">Galaxy Note 5</div>
+                <div class="device-item">Galaxy Note 10 Lite</div>
+                <div class="device-item">Galaxy Note 10 Plus</div>
+                <div class="device-item">Galaxy Alpha</div>
+                <div class="device-item">Galaxy A32</div>
+                <div class="device-item">Galaxy A30s</div>
+                <div class="device-item">Galaxy A5</div>
+                <div class="device-item">Galaxy A50s</div>
+                <div class="device-item">Galaxy A51</div>
+                <div class="device-item">Galaxy A52s</div>
+                <div class="device-item">Galaxy A52</div>
+                <div class="device-item">Galaxy A70</div>
+                <div class="device-item">Galaxy A70s</div>
+                <div class="device-item">Galaxy A72</div>
+                <div class="device-item">Galaxy A80</div>
+                <div class="device-item">Galaxy M32</div>
+                <div class="device-item">Galaxy M40</div>
+                <div class="device-item">Galaxy M42</div>
+                <div class="device-item">Galaxy A50s 6GB RAM</div>
+                <div class="device-item">Galaxy M51</div>
+                <div class="device-item">Galaxy F62</div>
+                <div class="device-item">Galaxy On8</div>
+                <div class="device-item">Galaxy S3 Neo</div>
+                <div class="device-item">Galaxy Z Flip 3</div>
+                <div class="device-item">Galaxy Z Fold 3</div>
+            </div>
+        </div>
+        
+        <!-- OnePlus Devices -->
+        <div class="brand-section" id="oneplus">
+            <div class="brand-header">
+                <div class="brand-logo">O</div>
+                <div>
+                    <div class="brand-title">OnePlus</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on OnePlus Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="oneplus-devices">
+                <div class="device-item">OnePlus 3</div>
+                <div class="device-item">OnePlus 3T</div>
+                <div class="device-item">OnePlus 5</div>
+                <div class="device-item">OnePlus 5T</div>
+                <div class="device-item">OnePlus 6</div>
+                <div class="device-item">OnePlus 6T</div>
+                <div class="device-item">OnePlus 7</div>
+                <div class="device-item">OnePlus 7T</div>
+                <div class="device-item">OnePlus 7 Pro</div>
+                <div class="device-item">7T Pro McLaren Edition</div>
+                <div class="device-item">OnePlus 8</div>
+                <div class="device-item">OnePlus 8 Pro</div>
+                <div class="device-item">OnePlus Nord</div>
+                <div class="device-item">OnePlus 8T</div>
+                <div class="device-item">OnePlus 9</div>
+                <div class="device-item">OnePlus 9 Pro</div>
+                <div class="device-item">OnePlus 9 R</div>
+            </div>
+        </div>
+
+        <!-- Nokia Devices -->
+        <div class="brand-section" id="nokia">
+            <div class="brand-header">
+                <div class="brand-logo">N</div>
+                <div>
+                    <div class="brand-title">Nokia</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Nokia Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="nokia-devices">
+                <div class="device-item">Nokia 3</div>
+                <div class="device-item">Nokia 3.1</div>
+                <div class="device-item">Nokia 4.21</div>
+                <div class="device-item">Nokia  5</div>
+                <div class="device-item">Nokia 6.1</div>
+                <div class="device-item">Nokia 7</div>
+                <div class="device-item">Nokia 7 Plus</div>
+                <div class="device-item">Nokia 8 Sirocco</div>
+                <div class="device-item">Nokia 8.1</div>
+                <div class="device-item">Nokia 9</div>
+                <div class="device-item">Nokia Lumina 920</div>
+                <div class="device-item">Nokia Lumina 930</div>
+
+                <!-- Add more Nokia devices here -->
+            </div>
+        </div>
+
+        <div class="brand-section" id="motorola">
+            <div class="brand-header">
+                <div class="brand-logo">M</div>
+                <div>
+                    <div class="brand-title">Motorola</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Motorola Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="motorola-devices">
+                <div class="device-item">Motorola Moto G</div>
+                <div class="device-item">Motorola Moto G5</div>
+                <div class="device-item">Motorola Moto G5 Plus</div>
+                <div class="device-item">Motorola Moto G6</div>
+                <div class="device-item">Motorola Moto G7</div>
+                <div class="device-item">Motorola Moto G8</div>
+                <div class="device-item">Motorola Moto E</div>
+                <div class="device-item">Motorola Moto E5</div>
+                <div class="device-item">Motorola Moto X4</div>
+                <div class="device-item">Motorola Moto Z</div>
+                <div class="device-item">Motorola Moto Z2</div>
+                <div class="device-item">Motorola Moto Z3</div>
+                <div class="device-item">Motorola Edge</div>
+                <div class="device-item">Motorola Edge Plus</div>
+                <div class="device-item">Motorola One Vision</div>
+                <div class="device-item">Motorola One Zoom</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="google">
+            <div class="brand-header">
+                <div class="brand-logo">G</div>
+                <div>
+                    <div class="brand-title">Google</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Google Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="google-devices">
+                <div class="device-item">Google Pixel</div>
+                <div class="device-item">Google Pixel XL</div>
+                <div class="device-item">Google Pixel 2</div>
+                <div class="device-item">Google Pixel 2XL</div>
+                <div class="device-item">Google Pixel 3XL</div>
+                <div class="device-item">Google Pixel 3</div>
+                <div class="device-item">Google Pixel 3A</div>
+                <div class="device-item">Google Nexus 4</div>
+                <div class="device-item">Google Pixel 4A</div>
+                <div class="device-item">Google LG Nexus 5</div>
+                <div class="device-item">Google Nexus 5X</div>
+                <div class="device-item">Google Nexus 6P</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="realme">
+            <div class="brand-header">
+                <div class="brand-logo">R</div>
+                <div>
+                    <div class="brand-title">Realme</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Realme Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="realme-devices">
+                <div class="device-item">Realme GT</div>
+                <div class="device-item">Realme Narzo 30</div>
+                <div class="device-item">Realme X7 Max</div>
+                <div class="device-item">Realme X7 Pro</div>
+                <div class="device-item">Realme X50 Pro</div>
+                <div class="device-item">Realme X2 Pro</div>
+                <div class="device-item">Realme GT Neo</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="sony">
+            <div class="brand-header">
+                <div class="brand-logo">S</div>
+                <div>
+                    <div class="brand-title">Sony</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Sony Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="sony-devices">
+                <div class="device-item">Sony XA1/Ultra/Plus</div>
+                <div class="device-item">Sony XA2/Ultra/Plus</div>
+                <div class="device-item">Sony XZ1/Compact</div>
+                <div class="device-item">Sony XZ2/Compact/Premium</div>
+                <div class="device-item">Sony Xperia 10</div>
+                <div class="device-item">Sony Xperia 10 Lite</div>
+                <div class="device-item">Sony Xperia 8 Lite</div>
+                <div class="device-item">Sony Xperia XA1</div>
+                <div class="device-item">Sony Xperia Z1</div>
+                <div class="device-item">Sony Xperia C5</div>
+                <div class="device-item">Sony Xperia XZ1</div>
+                <div class="device-item">Sony Xperia XA1 Dual</div>
+                <div class="device-item">Sony Xperia XA1 Ultra</div>
+                <div class="device-item">Sony Xperia XZ</div>
+                <div class="device-item">Sony Xperia T3</div>
+                <div class="device-item">Sony Xperia XA</div>
+                <div class="device-item">Sony Xperia ZR</div>
+                <div class="device-item">Sony Xperia Z3+</div>
+                <div class="device-item">Sony Xperia SP</div>
+                <div class="device-item">Sony Xperia XA1 Plus</div>
+                <div class="device-item">Sony Xperia Z2</div>
+                <div class="device-item">Sony Xperia Z5</div>
+                <div class="device-item">Sony Xperia T2</div>
+                <div class="device-item">Sony Xperia E3</div>
+                <div class="device-item">Sony Xperia Z3</div>
+                <div class="device-item">Sony Xperia L2</div>
+                <div class="device-item">Sony Xperia M2</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="vivo">
+            <div class="brand-header">
+                <div class="brand-logo">V</div>
+                <div>
+                    <div class="brand-title">Vivo</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Vivo Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="vivo-devices">
+                <div class="device-item">Vivo X70 Pro Plus</div>
+                <div class="device-item">Vivo X70 Pro</div>
+                <div class="device-item">Vivo X70</div>
+                <div class="device-item">Vivo Z6</div>
+                <div class="device-item">Vivo S10 Pro</div>
+                <div class="device-item">Vivo Nex 3S</div>
+                <div class="device-item">Vivo S9 5G</div>
+                <div class="device-item">Vivo X60T Pro Plus</div>
+                <div class="device-item">Vivo X60T</div>
+                <div class="device-item">Vivo Y53s</div>
+            </div>
+        </div>
+
+
+        <div class="brand-section" id="honor">
+            <div class="brand-header">
+                <div class="brand-logo">H</div>
+                <div>
+                    <div class="brand-title">Honor</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Honor Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="honor-devices">
+                <div class="device-item">Honor 8</div>
+                <div class="device-item">Honor View 20</div>
+                <div class="device-item">Honor V10</div>
+                <div class="device-item">Honor 8 Pro</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="htc">
+            <div class="brand-header">
+                <div class="brand-logo">H</div>
+                <div>
+                    <div class="brand-title">HTC</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on HTC Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="htc-devices">
+                <div class="device-item">HTC One A9</div>
+                <div class="device-item">HTC Desire 20 Plus</div>
+                <div class="device-item">HTC U Ultra</div>
+                <div class="device-item">HTC 10 Evo</div>
+                <div class="device-item">HTC U11 Plus</div>
+                <div class="device-item">HTC Desire 10 Pro</div>
+                <div class="device-item">HTC One E8</div>
+                <div class="device-item">HTC Desire Eye</div>
+                <div class="device-item">HTC 10 Lifestyle</div>
+                <div class="device-item">HTC One ME</div>
+                <div class="device-item">HTC One E9+</div>
+                <div class="device-item">HTC One M9 Plus</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="poco">
+            <div class="brand-header">
+                <div class="brand-logo">P</div>
+                <div>
+                    <div class="brand-title">Poco</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Poco Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="poco-devices">
+                <div class="device-item">Poco F2 Pro</div>
+                <div class="device-item">Poco F3</div>
+                <div class="device-item">Poco X3 GT</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="oppo">
+            <div class="brand-header">
+                <div class="brand-logo">O</div>
+                <div>
+                    <div class="brand-title">OPPO</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on OPPO Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="oppo-devices">
+                <div class="device-item">OPPO Reno6</div>
+                <div class="device-item">OPPO Reno6 Pro</div>
+                <div class="device-item">OPPO Reno 4</div>
+                <div class="device-item">OPPO Reno 2</div>
+                <div class="device-item">OPPO Find X2</div>
+                <div class="device-item">OPPO R17 Pro</div>
+                <div class="device-item">OPPO Reno 3</div>
+                <div class="device-item">OPPO Find X3 Pro</div>
+                <div class="device-item">OPPO Reno 6 Pro Plus</div>
+                <div class="device-item">OPPO K9</div>
+                <div class="device-item">OPPO A95</div>
+                <div class="device-item">OPPO Find X3</div>
+                <div class="device-item">OPPO K9 Pro</div>
+                <div class="device-item">OPPO Reno 5 Pro</div>
+                <div class="device-item">OPPO Reno 10x</div>
+                <div class="device-item">OPPO N1</div>
+                <div class="device-item">OPPO Reno 5A</div>
+                <div class="device-item">OPPO Reno</div>
+                <div class="device-item">OPPO Reno6 4G</div>
+                <div class="device-item">OPPO A16s</div>
+                <div class="device-item">OPPO A94</div>
+                <div class="device-item">OPPO Find X3 Neo</div>
+                <div class="device-item">OPPO Reno 5 Lite</div>
+                <div class="device-item">OPPO Reno 3A</div>
+                <div class="device-item">OPPO N1 Mini</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="asus">
+            <div class="brand-header">
+                <div class="brand-logo">A</div>
+                <div>
+                    <div class="brand-title">Asus</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Asus Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="asus-devices">
+                <div class="device-item">Asus ROG Phone</div>
+            </div>
+        </div>
+        
+        <div class="brand-section" id="essential">
+            <div class="brand-header">
+                <div class="brand-logo">E</div>
+                <div>
+                    <div class="brand-title">Essential</div>
+                    <div class="brand-subtitle">How to Use Async Tap NFC Business Card on Essential Devices</div>
+                </div>
+            </div>
+            <div class="devices-grid" id="essential-devices">
+                <div class="device-item">Essential PH-1</div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('deviceSearch');
+            const allDeviceItems = document.querySelectorAll('.device-item');
+            const brandSections = document.querySelectorAll('.brand-section');
+            
+            searchInput.addEventListener('input', function() {
+                const searchTerm = this.value.toLowerCase();
+                let hasResults = false;
+                
+                // Hide all brand sections initially
+                brandSections.forEach(section => {
+                    section.classList.add('hidden');
+                });
+                
+                if (searchTerm === '') {
+                    // Show all devices if search is empty
+                    allDeviceItems.forEach(item => {
+                        item.style.display = 'block';
+                        item.parentElement.parentElement.classList.remove('hidden');
+                    });
+                    return;
+                }
+                
+                // Search through all devices
+                allDeviceItems.forEach(item => {
+                    const deviceName = item.textContent.toLowerCase();
+                    if (deviceName.includes(searchTerm)) {
+                        item.style.display = 'block';
+                        item.parentElement.parentElement.classList.remove('hidden');
+                        hasResults = true;
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+                
+                // Handle no results
+                if (!hasResults) {
+                    const noResults = document.createElement('div');
+                    noResults.className = 'no-results';
+                    noResults.textContent = 'No devices found matching your search.';
+                    
+                    // Check if no-results already exists
+                    const existingNoResults = document.querySelector('.no-results');
+                    if (!existingNoResults) {
+                        document.querySelector('.container').appendChild(noResults);
+                    }
+                } else {
+                    const existingNoResults = document.querySelector('.no-results');
+                    if (existingNoResults) {
+                        existingNoResults.remove();
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
