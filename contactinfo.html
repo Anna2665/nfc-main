@@ -3,157 +3,133 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <title>Contact - TapMo</title>
+  <title>Contact Us - Async Tap</title>
   <style>
     body {
-      font-family: 'Nunito', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #000000;
       margin: 0;
-      padding: 0;
-      color: #cceacc;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background-color: #0b0f0c; /* Dark green */
+      color: #b0dab9;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 20px;
-      background: #0d1f0d;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 255, 0, 0.2);
+    .contact-section {
+      display: flex;
+      flex-wrap: wrap;
+      padding: 40px;
+      gap: 40px;
+      justify-content: center;
+      align-items: flex-start;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
-    h2, h3 {
-      text-align: center;
-      color: #598958;
+    .info, .form {
+      flex: 1 1 400px;
+      background-color: #1a1a1a;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     }
 
-    .address {
-      margin: 20px 0;
-      padding: 15px;
-      background-color: #111;
-      border-left: 5px solid #447044;
-      border-radius: 5px;
+    h1 {
+      color: #b0dab9;
+      margin-bottom: 16px;
     }
 
-    .address p {
-      color: #538f53;
+    .info p {
+      line-height: 1.6;
+      font-size: 1.05rem;
     }
 
-    .form-group {
-      margin-bottom: 15px;
-    }
-
-    label {
-      font-weight: bold;
+    .form label {
       display: block;
-      margin-bottom: 5px;
-      color: #ffffff;
+      margin: 12px 0 6px;
+      color: #b0dab9;
     }
 
-    input, textarea {
+    .form input, .form textarea {
       width: 100%;
       padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #466f46;
-      background-color: #000;
-      color: #b8ffb8;
-      box-sizing: border-box;
+      border-radius: 6px;
+      background-color: #2b2b2b;
+      border: 1px solid #444;
+      color: #fff;
+      font-size: 1rem;
     }
 
-    textarea {
-      height: 120px;
+    .form textarea {
       resize: vertical;
+      min-height: 100px;
     }
 
-    input:focus, textarea:focus {
-      border-color: #00ff00;
-      outline: none;
-    }
-
-    button {
-      background-color: #00aa00;
+    .form button {
+      margin-top: 20px;
+      background-color: #0f5132;
       color: #fff;
       padding: 12px 20px;
       border: none;
-      border-radius: 5px;
+      border-radius: 6px;
+      font-size: 1rem;
       cursor: pointer;
-      font-size: 16px;
-      width: 100%;
     }
 
-    button:hover {
-      background-color: #00cc00;
+    .form button:hover {
+      background-color: #155d3b;
     }
 
-    .status {
+    .logo {
       text-align: center;
-      margin-top: 20px;
-      font-weight: bold;
+      margin-bottom: 30px;
     }
 
-    .success {
-      color: #00ff00;
+    .logo img {
+      max-height: 100px;
     }
 
-    .error {
-      color: red;
+    @media (max-width: 768px) {
+      .contact-section {
+        flex-direction: column;
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
-  <div class="container">
-    <h2>Contact Us</h2>
-    <div class="address">
-      <h3>Muscat, Oman (Qurm)</h3>
-      <p>Async Tap Middle East, Building 55, Qurm Commercial Area,<br>
-         Muscat, Sultanate of Oman</p>
-    </div>
-
-    <h3>Fill in the Form</h3>
-    <form id="contactForm">
-      <div class="form-group">
-        <label for="name">Name:</label>
-        <input id="name" name="name" type="text" required />
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input id="email" name="email" type="email" required />
-      </div>
-      <div class="form-group">
-        <label for="phone">Phone:</label>
-        <input id="phone" name="phone" type="tel" required />
-      </div>
-      <div class="form-group">
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
-      </div>
-      <div class="form-group">
-        <button type="submit">Send Message</button>
-      </div>
-      <div id="statusMessage" class="status"></div>
-    </form>
+  <div class="logo">
+    <img src="logo.png" alt="Async Tap Logo" />
   </div>
 
-  <script>
-    const form = document.getElementById('contactForm');
-    const statusMessage = document.getElementById('statusMessage');
+  <div class="contact-section">
+    <div class="info">
+      <h1>Contact Us</h1>
+      <p><strong>Async Tap HQ</strong></p>
+      <p>Building 3, Qurm Business District,<br>
+         Qurm, Muscat, Oman</p>
+      <p>📞 +968 9123 4567</p>
+      <p>📧 contact@asynctap.com</p>
+      <p>🕘 Mon - Fri: 9AM to 6PM</p>
+    </div>
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
+    <div class="form">
+      <h1>Send a Message</h1>
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required />
 
-      statusMessage.textContent = "Sending...";
-      statusMessage.className = "status";
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
 
-      // Mock async delay
-      setTimeout(() => {
-        statusMessage.textContent = "Your message has been sent successfully!";
-        statusMessage.className = "status success";
-        form.reset();
-      }, 1500);
-    });
-  </script>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" name="phone" />
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
 
 </body>
 </html>
