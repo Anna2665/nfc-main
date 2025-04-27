@@ -376,12 +376,12 @@
                 </div>
                 
                 <div class="form-group">
-                    <label for="user-title">Sub Title</label>
+                    <label for="user-title">Job Description</label>
                     <input type="text" id="user-title" placeholder="e.g. Phone Number, Job Title or Company Name">
                 </div>
                 
                 <div class="form-group">
-                    <label for="user-details">More Details</label>
+                    <label for="user-details">Email/Phone Number</label>
                     <textarea id="user-details" placeholder="e.g. Phone Number, Job Title or Company Name"></textarea>
                 </div>
                 
@@ -414,7 +414,7 @@
                     </div>
                 </div>
                 
-                <button class="submit-btn" onclick="submitDesign()">Submit Details</button>
+                <button class="submit-btn">Submit Details</button>
             </div>
         </div>
     </div>
@@ -482,30 +482,86 @@
             document.getElementById('preview-details').textContent = this.value || 'Phone: 123-456-7890\nEmail: you@example.com';
         });
         
-        // Submit design
-        function submitDesign() {
-            const name = document.getElementById('user-name').value;
-            const title = document.getElementById('user-title').value;
-            const details = document.getElementById('user-details').value;
-            
-            if (!name) {
-                alert('Please enter your name');
-                return;
-            }
-            
-            // In a real implementation, this would send data to server
-            alert(`Thank you ${name}! Your design request has been submitted.\n\nOur designer will contact you shortly on WhatsApp.`);
-            
-            // Reset form
-            document.getElementById('user-name').value = '';
-            document.getElementById('user-title').value = '';
-            document.getElementById('user-details').value = '';
-            document.getElementById('logo-upload').value = '';
-            document.getElementById('preview-logo').style.display = 'none';
-        }
+    
+
+    
     </script>
     
     <!-- Font Awesome for WhatsApp icon -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script type="module">
+        // Import necessary Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+      
+        // Your Firebase config
+        const firebaseConfig = {
+          apiKey: "AIzaSyCjnpNOZ4_79CiswFiwBk1ZYIc6-K59IJ8",
+          authDomain: "nfc-cards-20f21.firebaseapp.com",
+          projectId: "nfc-cards-20f21",
+          storageBucket: "nfc-cards-20f21.appspot.com",
+          messagingSenderId: "227066343452",
+          appId: "1:227066343452:web:14fdd204de371964786fd9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+      
+        let currentUser = null; // Save logged in user globally
+      
+        // 1. Check if user is logged in
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            console.log("✅ User logged in:", user.email);
+            currentUser = user;
+          } else {
+            console.log("❌ No user. Redirecting...");
+            window.location.href = "login.html";
+          }
+        });
+      
+        // 2. When submit button is clicked
+        document.querySelector('.submit-btn').addEventListener('click', async function(event) {
+          event.preventDefault();
+      
+          // Get form values
+          const name = document.getElementById('user-name').value;
+          const title = document.getElementById('user-title').value;
+          const details = document.getElementById('user-details').value;
+      
+          if (!name || !title || !details) {
+            alert('❗ Please fill all fields before submitting!');
+            return;
+          }
+      
+          try {
+            if (!currentUser) {
+              alert('❌ User not logged in!');
+              return;
+            }
+      
+            // 3. Save form data to Firestore
+            await setDoc(doc(db, "design_submissions", currentUser.uid), {
+              name: name,
+              title: title,
+              details: details,
+              submittedAt: new Date()
+            });
+      
+            alert('✅ Your design request has been saved successfully!');
+            window.location.href = "thankyou.html";
+
+          } catch (error) {
+            console.error('Error saving design:', error);
+            alert('❌ Something went wrong. Please try again.');
+          }
+        });
+      </script>
+      
+      
 </body>
 </html>
