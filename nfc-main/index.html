@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <title>AsynchTap</title>
+         <link rel="icon" type="image/png" href="icons8-card-32 (1).png">
+         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+
+
+        <style>
+
+            /* Top bar socials */
+            .mainheader{
+            margin-top: 0px;
+            background: linear-gradient(90deg, #1d5639, #77dd77);
+            padding: 0.01rem 0.5rem;
+            border-bottom: 1px solid #334155;
+            
+            }
+
+            .mainheader ul {
+            list-style-type: none;
+            display: flex;
+            gap: 1.5rem;
+            text-align:left;
+            }
+
+            .mainheader li {
+            display: inline-block;
+            }
+
+            .mainheader a {
+            color: #94a3b8;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-family: 'Nunito';
+            }
+
+            .mainheader a:hover {
+            color: #ffffff;
+            }
+
+
+            body{
+                margin-top:0px;
+                font-family:'Nunito';
+                margin-left:auto;
+                margin-right:auto;
+                background-color: #000000
+            }
+
+            #mainheader{
+                background-color:rgb(51, 150, 77)
+            }
+
+                
+           /*Company name and menu*/
+
+            .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1d5639;
+            padding: 1rem 2rem;
+            flex-wrap: wrap;
+            }
+
+            .logotitle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            }
+
+            .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2.5rem;
+            text-align:center;
+            flex-wrap: wrap;
+            justify-content:center;
+            }
+
+            .menu li a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            font-size:1.2rem;
+        }
+
+            .menu li a:hover {
+            color: #8ad981;
+            }
+
+            h1{
+                color:#ffffff
+            }
+
+
+            /*main content page*/
+            .advert {
+            background-color: #000000;
+            padding: 4rem 2rem;
+            color: white;
+            }
+
+            .advert-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: auto;
+            }
+
+            .advert-text {
+            flex: 1 1 50%;
+            padding-right: 2rem;
+            }
+
+            .advert-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            }
+
+            .advert-text p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            }
+
+            .advert-image {
+            flex: 1 1 40%;
+            text-align: center;
+            
+            }
+
+            .advert-image img {
+            max-width: 100%;
+            height: auto;
+            }
+            
+            
+
+            /*Menu bar color and size*/
+
+            header {
+            background: linear-gradient(90deg, #1d5639, #77dd77);
+            padding: 0.2rem;
+            text-align: left;
+            }
+
+            header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            }
+
+            header p {
+            font-size: 1.2rem;
+            color: #cbd5e1;
+            }
+
+            /*Trusted section*/
+            .trusted-section {
+            background-color: #456546;
+            color: #f1f5f9;
+            padding: 4rem 2rem;
+            text-align: center;
+            }
+
+            .trusted-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            }
+
+            .trusted-content p {
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            }
+
+            /*Designing card*/
+
+            .design-assist {
+            background-color: #000000;
+            color: #f8fafc;
+            padding: 4rem 2rem;
+            }
+
+            .design-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: auto;
+            }
+
+            .design-text {
+            flex: 1 1 500px;
+            }
+
+            .design-text h2 {
+            font-size: 2rem;
+            color: #7bdb91;
+            margin-bottom: 0.5rem;
+            }
+
+            .design-text h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            }
+
+            .design-text ul {
+            margin: 1rem 0;
+            padding-left: 1rem;
+            }
+
+            .design-text li {
+            margin-bottom: 0.5rem;
+            }
+
+            .cta-btn {
+            background-color: #7bdb91;
+            color: black;
+            padding: 0.75rem 1.5rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            }
+
+            .cta-btn:hover {
+            background-color: #5dc877;
+            }
+
+            .design-img {
+            flex: 1 1 300px;
+            text-align: center;
+            }
+
+            .design-img img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            }
+
+            /*More info on the buisness card*/
+
+            .buisnesscard-section{
+              background-color:#1d5639;
+              color:#f1f5f9;
+              padding:4rem 2rem;
+              text-align:center;
+
+            }
+
+            .buisnesscard h2{
+              font-size:2.5rem;
+              text-align:center;
+              margin-bottom:1rem;
+
+            }
+            .buisnesscard h3{
+              font-size:1.5rem;
+              text-align:center;
+              margin-bottom:1rem;
+
+            }
+
+            .buisnesscard  p{
+              font-size:1rem;
+              /*text-align:center*/;
+              margin-bottom:1rem;
+              max-width: 1200px;
+              margin: 0 auto 4rem;
+              
+
+            }
+
+
+            /*Footer*/
+
+            footer {
+            background-color: #1e293b;
+            text-align: center;
+            padding: 1rem;
+            font-size: 0.9rem;
+            color: #94a3b8;
+
+            }
+
+
+
+
+            
+        </style>
+    </head>
+
+    <body>
+        <header class="mainheader">
+            <nav>
+                    <ul class="socials">
+                      <li><a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                      <li><a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                      <li><a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                      <li><a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                    </ul>
+            </nav>
+
+        </header>
+
+        <div class="main">
+            <div class="logotitle">
+            <img src="icons8-card-64.png" alt="Logo" />
+            <h1>AsyncTap</h1>
+            </div>
+        
+            
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designcard.html">Design Your Card</a></li>
+                    <li><a href="#Shop">Shop</a></li>
+                    <li><a href="phones.html">Compatible Phones</a></li>
+                    <li><a href="register.html">Login</a></li>
+                    <li><a href="contactinfo.html">Contact</a></li>
+                    <li><a href="getdesign.html">Get Design</a></li>
+            </div>
+        </div>
+
+        /*Main content area*/
+        <section class="advert">
+            <div class="advert-content">
+              <div class="advert-text">
+                <h2>The Future of Business Cards — Tap. Connect. Impress.</h2>
+                <p>Connect smarter — no apps, no typing, just one seamless tap.</p>
+              </div>
+              <div class="advert-image">
+                <img src="credit-card_11187004.png" height="400" width="400" alt="Product Image" />
+              </div>
+            </div>
+          </section>
+          
+        /*Companies*/
+        <section class="trusted-section">
+            <div class="trusted-content">
+              <h2>Why Top Companies Trust AsyncTap</h2>
+              <p>Reliable. Fast. Secure. We're helping brands make smarter connections through NFC-powered cards.</p>
+          </section>
+
+        /*Info about designing card*/
+        <section class="design-assist">
+            <div class="design-content">
+              <div class="design-text">
+                <h2>Free Design Help</h2>
+                <h3>Your Custom Smart Card Starts Here</h3>
+                <p>Visualize a card that’s uniquely yours — and let us bring it to life. Share your info, and we’ll design a smart card that makes a lasting impression.</p>
+                <ul>
+                  <li>Zero Commitment: Preview your design before you pay anything.</li>
+                  <li>Custom Fit: We match your card to your brand’s style and personality.</li>
+                  <li>Creative Experts: Our team crafts each card to be clean, bold, and professional.</li>
+                </ul>
+                <a href="design.html" target="_blank"><button class="cta-btn">Get Started Now!</button></a>
+              </div>
+          
+              <div class="design-img">
+                <img src="designing.png" alt="Smart Card Preview" />
+              </div>
+            </div>
+        </section>
+
+        /*More info abt the card*/
+        <section class="buisnesscard-section">
+          <div class="buisnesscard">
+            <h3>Premium NFC Buisness Card</h3>
+            <h2>Go contactless in 3 Easy Steps</h2>
+            <p>Forget about exchanging and managing stacks of traditional business cards. TapMo NFC-enabled digital smart business card use cutting-edge technology, allowing you to instantly share your contact details, social media profiles, and more directly to any smartphone – no app required. Revolutionize the way you network with this modern, hassle-free solution.</p>
+          </div>
+       </section>
+             
+          
+        <footer>
+            <p style="font-size:20px; text-align:left; display: block;">Contact us:<br><a href="mailto:support@asyncsolution.com" style="color:green; font-size:20px; text-align:left; display: block;" >Email</a></p>
+            <small> &copy; 2025 NFC Connect — Powered by Tap Tech. All rights reserved. </small>
+            
+        </footer>
+    </body>
+</html>

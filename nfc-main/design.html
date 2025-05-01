@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>NFC Card Designer | Free Mockup</title>
+    <style>
+                
+           /*Company name and menu*/
+
+            .main {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1d5639;
+            padding: 1rem 2rem;
+            flex-wrap: wrap;
+            }
+
+            .logotitle {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            }
+
+            .menu ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 2.5rem;
+            text-align:center;
+            flex-wrap: wrap;
+            justify-content:center;
+            }
+
+            .menu li a {
+            text-decoration: none;
+            color: #ffffff;
+            transition: color 0.3s ease;
+            font-weight: 500;
+            font-size:1.2rem;
+        }
+
+            .menu li a:hover {
+            color: #8ad981;
+            }
+
+            h1{
+                color:#ffffff
+            }
+
+        :root {
+            --primary-color: #25D366;
+            --secondary-color: #075E54;
+            --dark-bg: #111;
+            --light-text: #fff;
+            --card-bg: #1e1e1e;
+            --border-color: #6fa676;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Nunito';
+        }
+        
+        body {
+            background-color: var(--dark-bg);
+            color: var(--light-text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header-banner {
+            background-color: #1d5639;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        .header-banner a {
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+            padding: 8px 20px;
+            background-color: var(--primary-color);
+            border-radius: 20px;
+        }
+        
+        .designer-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card-preview {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .card-tabs {
+            display: flex;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .card-tab {
+            flex: 1;
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .card-tab.active {
+            border-bottom: 3px solid var(--primary-color);
+            font-weight: bold;
+        }
+        
+        .card-display {
+            width: 200%;
+            height: 250px;
+            width:460px;
+            background-color: #2a2a2a;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-side {
+            display: none;
+            width: 100%;
+            height: 100%;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .card-side.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .card-subtitle {
+            font-size: 16px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        
+        .card-image {
+            max-width: 80px;
+            max-height: 80px;
+            margin-bottom: 15px;
+        }
+        
+        .design-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: var(--card-bg);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        .form-group input, 
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            background-color: #333;
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: var(--light-text);
+        }
+        
+        .form-group textarea {
+            min-height: 80px;
+            resize: vertical;
+        }
+
+        .upload-btn {
+    display: inline-block;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.upload-btn:hover {
+    background-color: #1da851;
+}
+
+        
+        .color-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        
+        .color-option.selected {
+            border-color: var(--primary-color);
+            transform: scale(1.1);
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #128C7E;
+        }
+        
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .designer-container {
+                flex-direction: column;
+            }
+            
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <body>
+
+        <div class="main">
+            <div class="logotitle">
+            <img src="icons8-card-64.png" alt="Logo" />
+            <h1>AsyncTap</h1>
+            </div>
+        
+            
+            <div class="menu">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="designcard.html">Design Your Card</a></li>
+                    <li><a href="#Shop">Shop</a></li>
+                    <li><a href="phones.html">Compatible Phones</a></li>
+                    <li><a href="register.html">Login</a></li>
+                    <li><a href="contactinfo.html">Contact</a></li>
+                    <li><a href="getdesign.html">Get Design</a></li>
+            </div>
+        </div>
+
+    <div class="container">
+        <div class="header-banner">
+            <h2>Get a free custom design mockup!</h2>
+            <p>Connect with our designer on WhatsApp. Payment only after you approve the design.</p>
+            <a href="https://wa.me/1234567890" target="_blank">Click Here</a>
+        </div>
+        
+        <div class="designer-container">
+            <div class="card-preview">
+                <div class="card-tabs">
+                    <div class="card-tab active" onclick="switchCardSide('front')">Front Side</div>
+                    <div class="card-tab" onclick="switchCardSide('back')">Back Side</div>
+                </div>
+                
+                <div class="card-display">
+                    <div class="card-side active" id="front-side">
+                        <img src="" alt="Logo" class="card-image" id="preview-logo" style="display: none;">
+                        <div class="card-title" id="preview-title">Your Name</div>
+                        <div class="card-subtitle" id="preview-subtitle">Job Title / Company</div>
+                    </div>
+                    
+                    <div class="card-side" id="back-side">
+                        <div class="card-title">Contact Details</div>
+                        <div class="card-subtitle" id="preview-details">Phone: 123-456-7890<br>Email: you@example.com</div>
+                    </div>
+                </div>
+                
+                <div class="color-options">
+                    <div class="color-option selected" style="background-color: #1e1e1e;" onclick="changeCardColor('#1e1e1e')"></div>
+                    <div class="color-option" style="background-color: #2a2a2a;" onclick="changeCardColor('#2a2a2a')"></div>
+                    <div class="color-option" style="background-color: #333;" onclick="changeCardColor('#333')"></div>
+                    <div class="color-option" style="background-color: #075E54;" onclick="changeCardColor('#075E54')"></div>
+                    <div class="color-option" style="background-color: #25D366;" onclick="changeCardColor('#25D366')"></div>
+                </div>
+            </div>
+            
+            <div class="design-form">
+                <h2 style="margin-bottom: 20px;">Submit Your Details</h2>
+                
+                <div class="form-group">
+                    <label for="user-name">Your Name</label>
+                    <input type="text" id="user-name" placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-title">Job Description</label>
+                    <input type="text" id="user-title" placeholder="e.g. Phone Number, Job Title or Company Name">
+                </div>
+                
+                <div class="form-group">
+                    <label for="user-details">Email/Phone Number</label>
+                    <textarea id="user-details" placeholder="e.g. Phone Number, Job Title or Company Name"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="logo-upload">LOGO/IMAGE</label>
+                    <input type="file" id="logo-upload" accept="image/*" >
+                    <label for="logo-upload" class="upload-btn">Choose Logo</label>
+                    
+                </div>
+                
+                <div class="form-group">
+                    <label>Choose a card color</label>
+                    <div class="color-options">
+                        <div class="color-option selected" style="background-color: #1e1e1e;" onclick="selectColor('card', '#1e1e1e')"></div>
+                        <div class="color-option" style="background-color: #2a2a2a;" onclick="selectColor('card', '#2a2a2a')"></div>
+                        <div class="color-option" style="background-color: #333;" onclick="selectColor('card', '#333')"></div>
+                        <div class="color-option" style="background-color: #075E54;" onclick="selectColor('card', '#075E54')"></div>
+                        <div class="color-option" style="background-color: #25D366;" onclick="selectColor('card', '#25D366')"></div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label>Choose a QR border and NFC color</label>
+                    <div class="color-options">
+                        <div class="color-option selected" style="background-color: #25D366;" onclick="selectColor('qr', '#25D366')"></div>
+                        <div class="color-option" style="background-color: #075E54;" onclick="selectColor('qr', '#075E54')"></div>
+                        <div class="color-option" style="background-color: #fff;" onclick="selectColor('qr', '#fff')"></div>
+                        <div class="color-option" style="background-color: #FFD700;" onclick="selectColor('qr', '#FFD700')"></div>
+                        <div class="color-option" style="background-color: #FF5733;" onclick="selectColor('qr', '#FF5733')"></div>
+                    </div>
+                </div>
+                
+                <button class="submit-btn">Submit Details</button>
+            </div>
+        </div>
+    </div>
+    
+    <a href="https://wa.me/1234567890" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    <script>
+        
+        // Switch between front and back card views
+        function switchCardSide(side) {
+            debugger;
+            document.querySelectorAll('.card-tab').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.card-side').forEach(side => side.classList.remove('active'));
+            
+            document.querySelector(`.card-tab[onclick="switchCardSide('${side}')"]`).classList.add('active');
+            document.getElementById(`${side}-side`).classList.add('active');
+        }
+        
+        // Change card color
+        function changeCardColor(color) {
+            document.querySelectorAll('.card-display').forEach(display => {
+                display.style.backgroundColor = color;
+            });
+            
+            document.querySelectorAll('.color-option').forEach(option => option.classList.remove('selected'));
+            event.target.classList.add('selected');
+        }
+        
+        // Select color for card or QR
+        function selectColor(type, color) {
+            document.querySelectorAll(`.color-options:nth-of-type(${type === 'card' ? 1 : 2}) .color-option`).forEach(option => {
+                option.classList.remove('selected');
+            });
+            event.target.classList.add('selected');
+            
+            // In a real implementation, this would update the QR/NFC color
+            console.log(`${type} color set to:`, color);
+        }
+        
+        // Handle logo upload
+        document.getElementById('logo-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const img = document.getElementById('preview-logo');
+                    img.src = event.target.result;
+                    img.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+        
+        // Update preview when fields change
+        document.getElementById('user-name').addEventListener('input', function() {
+            document.getElementById('preview-title').textContent = this.value || 'Your Name';
+        });
+        
+        document.getElementById('user-title').addEventListener('input', function() {
+            document.getElementById('preview-subtitle').textContent = this.value || 'Job Title / Company';
+        });
+        
+        document.getElementById('user-details').addEventListener('input', function() {
+            document.getElementById('preview-details').textContent = this.value || 'Phone: 123-456-7890\nEmail: you@example.com';
+        });
+        
+    
+
+    
+    </script>
+    
+    <!-- Font Awesome for WhatsApp icon -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+    <script type="module">
+        // Import necessary Firebase SDKs
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+        import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
+      
+        // Your Firebase config
+        const firebaseConfig = {
+          apiKey: "AIzaSyCjnpNOZ4_79CiswFiwBk1ZYIc6-K59IJ8",
+          authDomain: "nfc-cards-20f21.firebaseapp.com",
+          projectId: "nfc-cards-20f21",
+          storageBucket: "nfc-cards-20f21.appspot.com",
+          messagingSenderId: "227066343452",
+          appId: "1:227066343452:web:14fdd204de371964786fd9"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+      
+        let currentUser = null; // Save logged in user globally
+      
+        // 1. Check if user is logged in
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            console.log("✅ User logged in:", user.email);
+            currentUser = user;
+          } else {
+            console.log("❌ No user. Redirecting...");
+            window.location.href = "login.html";
+          }
+        });
+      
+        // 2. When submit button is clicked
+        // When submit button is clicked
+        document.querySelector('.submit-btn').addEventListener('click', async function(event) {
+  event.preventDefault();
+
+  const submitBtn = event.target;
+  submitBtn.disabled = true; // Disable button to prevent double-click
+  submitBtn.textContent = 'Submitting...'; // Show loading text
+
+  // Get form values
+  const name = document.getElementById('user-name').value.trim();
+  const title = document.getElementById('user-title').value.trim();
+  const details = document.getElementById('user-details').value.trim();
+
+  if (!name || !title || !details) {
+    alert('❗ Please fill all fields before submitting!');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit';
+    return;
+  }
+
+  try {
+    // Prepare data to send to back-end server
+    const data = { name, title, details };
+
+    // Send data to server via API request (POST)
+    const response = await fetch('http://localhost:3000/api/submitDesign', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    if (result.success) {
+      alert('✅ Your design request has been saved successfully!');
+      window.location.href = "thankyou.html";
+    } else {
+      alert('❌ Something went wrong. Please try again.');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit';
+    }
+  } catch (error) {
+    console.error('Error saving design:', error);
+    alert('❌ Something went wrong. Please try again.');
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Submit';
+  }
+});
+
+      </script>
+      
+      
+</body>
+</html>
