@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Async Tap</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #0b0f0c; /* Dark green background */
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-container {
+      background-color: #1a1a1a; /* Black card */
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .login-container h2 {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+      color: #b0dab9; /* Soft green */
+    }
+
+    .form-group input[type="email"],
+    .form-group input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #333;
+      border-radius: 6px;
+      background-color: #2b2b2b;
+      color: #fff;
+    }
+
+    .form-group input[type="checkbox"] {
+      margin-right: 6px;
+    }
+
+    .remember-me {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color: #b0dab9;
+    }
+
+    .login-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #0f5132; /* Dark green */
+      border: none;
+      color: #fff;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .login-btn:hover {
+      background-color: #155d3b;
+    }
+
+    .google-btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #444;
+      background-color: transparent;
+      color: #fff;
+      border-radius: 6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .google-btn img {
+      width: 18px;
+      height: 18px;
+      margin-right: 8px;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-top: -16px;
+      margin-bottom: 20px;
+    }
+
+    .forgot-password a {
+      color: #b0dab9;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .forgot-password a:hover {
+      text-decoration: underline;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+
+    .logo img {
+      max-height: 60px;
+    }
+  </style>
+
+  <script type="module" src="register.js" defer></script>
+</head>
+<body>
+  <div class="login-container">
+    <div class="logo">
+      <img src="logo-placeholder.png" alt="Async Tap Logo" />
+    </div>
+    <h2>Create Account</h2>
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" />
+    </div>
+
+    <div class="form-group">
+      <button class="login-btn" id="submit" type="submit">Create Account</button>
+    </div> 
+    <div class="forgot-password">
+      <a href="#">Forgot Password?</a>
+    </div>
+    <div class="remember-me">
+      <input type="checkbox" id="remember" />
+      <label for="remember">Remember Me</label>
+    </div>
+    <button class="login-btn" onclick="window.location.href='login.html'">Login</button>
+
+    <button class="google-btn">
+      <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google logo" />
+      Sign in with Google
+    </button>
+  </div>
+</body>
+</html>
