@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AsyncTap | NFC Shop</title>
+    <style>
+
+        /*Company name and menu*/
+
+        .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #1d5639;
+        padding: 1rem 2rem;
+        flex-wrap: wrap;
+        }
+
+        .logotitle {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        }
+
+        .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 2.5rem;
+        text-align:center;
+        flex-wrap: wrap;
+        justify-content:center;
+        }
+
+        .menu li a {
+        text-decoration: none;
+        color: #ffffff;
+        transition: color 0.3s ease;
+        font-weight: 500;
+        font-size:1.2rem;
+    }
+
+        .menu li a:hover {
+        color: #8ad981;
+        }
+
+        h1{
+            color:#ffffff
+        }
+        
+      body {
+        margin: 0;
+        font-family: "Segoe UI", sans-serif;
+        background-color: #0d0d0d;
+        color: #e0ffe0;
+      }
+
+      header {
+        background-color: #1d5639;
+        padding: 1.5rem;
+        text-align: center;
+      }
+
+      header h1 {
+        color: #55b789;
+        margin: 0;
+      }
+
+      .product-section {
+        padding: 2rem;
+      }
+
+      .product-section h2 {
+        color: #55b789;
+        margin-bottom: 1rem;
+      }
+
+      .card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        justify-content: center;
+      }
+
+      .product-card {
+        background-color: #1a1a1a;
+        border-radius: 12px;
+        padding: 1rem;
+        flex: 1 1 300px;
+        max-width: 300px;
+        color: #ffffff;
+        box-shadow: 0 4px 10px rgba(67, 155, 114, 0.953);
+        transition: transform 0.2s ease;
+      }
+
+      .product-card:hover {
+        transform: scale(1.05);
+      }
+
+      .product-card img {
+        width: 100%;
+        border-radius: 8px;
+        height: auto;
+        display: block;
+      }
+
+      .product-card h3 {
+        margin: 0.5rem 0;
+        font-size: 1rem;
+      }
+
+      .product-card p {
+        color: #55b789;
+        font-weight: bold;
+      }
+
+      .product-card p span {
+        text-decoration: line-through;
+        color: #888;
+        font-size: 0.9rem;
+        margin-left: 5px;
+      }
+
+      @media screen and (max-width: 600px) {
+        .product-card {
+          flex: 1 1 90%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    
+    <div class="main">
+        <div class="logotitle">
+        <img src="icons8-card-64.png" alt="Logo" />
+        <h1>AsyncTap</h1>
+        </div>
+    
+        
+        <div class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="designcard.html">Design Your Card</a></li>
+                <li><a href="shop.html">Shop</a></li>
+                <li><a href="phones.html">Compatible Phones</a></li>
+                <li><a href="register.html">Login</a></li>
+                <li><a href="contactinfo.html">Contact</a></li>
+                <li><a href="getdesign.html">Get Design</a></li>
+        </div>
+    </div>
+    <header>
+      <h1>Shop NFC Business Cards</h1>
+    </header>
+
+    <section class="product-section">
+      <h2>Smart Metal Cards</h2>
+      <div class="card-container">
+        <div class="product-card">
+          <img src="blacknfc.jpg" alt="Metal Card" />
+          <h3>Black Metal NFC Card</h3>
+          <p>₹999.00 <span>₹1,799.00</span></p>
+        </div>
+        <div class="product-card">
+          <img src="goldnfc.jpeg" alt="Gold Metal Card" />
+          <h3>Gold NFC Business Card</h3>
+          <p>₹1,199.00 <span>₹1,999.00</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>Smart PVC Cards</h2>
+      <div class="card-container">
+        <div class="product-card">
+          <img src="customnfc.webp" alt="PVC Card" />
+          <h3>NFC PVC Card</h3>
+          <p>₹599.00 <span>₹799.00</span></p>
+        </div>
+        <div class="product-card">
+          <img src="customqrnfc.webp" alt="Custom PVC Card" />
+          <h3>Custom QR PVC Card</h3>
+          <p>₹699.00 <span>₹999.00</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <h2>Wooden NFC Cards</h2>
+      <div class="card-container">
+        <div class="product-card">
+          <img src="cherrywood.jpeg" alt="Cherry Wood Card" />
+          <h3>Cherry Wood NFC Card</h3>
+          <p>₹1,499.00 <span>₹2,199.00</span></p>
+        </div>
+        <div class="product-card">
+          <img src="bamboowood.jpg" alt="Bamboo Wood Card" />
+          <h3>Bamboo Wood NFC Card</h3>
+          <p>₹1,499.00 <span>₹2,199.00</span></p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

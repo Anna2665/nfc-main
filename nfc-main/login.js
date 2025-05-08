@@ -26,20 +26,23 @@ submit.addEventListener("click", function (event){
  const email = document.getElementById('email').value;
  const password = document.getElementById('password').value;
 
+ const adminEmail = "admin@asynctap.com";
+
  signInWithEmailAndPassword(auth, email, password)
-  .then((userCredential) => {
-    // Signed up 
-    const user = userCredential.user;
-    alert("Logging in...")
-    // ...
-    window.location.href="Loggedin.html"
-  })
-  .catch((error) => {
-    const errorCode = error.code;
-    const errorMessage = error.message;
-    alert(errorMessage)
-    // ..
-  });
+    .then((userCredential) => {
+      const user = userCredential.user;
+      alert("Logging in...");
+
+      // Redirect based on role
+      if (email.toLowerCase() === adminEmail.toLowerCase()) {
+        window.location.href = "admin.html";
+      } else {
+        window.location.href = "Loggedin.html";
+      }
+    })
+    .catch((error) => {
+      alert(error.message);
+    });
 
 })
 
