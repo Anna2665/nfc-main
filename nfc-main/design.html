@@ -480,7 +480,6 @@
       <i class="fab fa-whatsapp"></i>
     </a>
     <script>
-      let selectedCardColor = "#1e1e1e"; // Default color
       // Switch between front and back card views
       function switchCardSide(side) {
         debugger;
@@ -496,9 +495,13 @@
           .classList.add("active");
         document.getElementById(`${side}-side`).classList.add("active");
       }
-
+      let selectedCardColor = null; // Default color
       // Unified color change function
+
+      document.addEventListener("DOMContentLoaded", () => {});
+
       function changeCardColor(color) {
+        console.log("changeCardColor called with:", color);
         // Update the card display color
         document.querySelectorAll(".card-display").forEach((display) => {
           display.style.backgroundColor = color;
@@ -641,7 +644,7 @@
           currentUser = user;
         } else {
           console.log("❌ No user. Redirecting...");
-          window.location.href = "login.html";
+          window.location.href = "register.html";
         }
       });
 
@@ -663,6 +666,8 @@
           const color = selectedCardColor || "#1e1e1e";
 
           const data = { name, title, details, color };
+
+          console.log("Sending color to backend:", selectedCardColor);
 
           if (!name || !title || !details) {
             alert("❗ Please fill all fields before submitting!");
