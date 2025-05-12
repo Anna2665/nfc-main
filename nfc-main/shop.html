@@ -136,6 +136,26 @@
           flex: 1 1 90%;
         }
       }
+
+      .whatsapp-float {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+      }
+
+      .whatsapp-float img {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s;
+      }
+
+      .whatsapp-float img:hover {
+        transform: scale(1.1);
+      }
+
     </style>
   </head>
   <body>
@@ -249,5 +269,15 @@
         });
       });
     </script>
+<!-- whatsapp button -->
+<a
+href="https://wa.me/918921850756" 
+class="whatsapp-float"
+target="_blank"
+aria-label="Chat on WhatsApp"
+>
+<img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png" alt="WhatsApp Chat" />
+</a>
+
   </body>
 </html>
