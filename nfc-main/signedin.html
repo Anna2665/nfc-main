@@ -1,57 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Welcome - Async Tap</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0b0f0c; /* Deep dark green */
-      color: #b0dab9; /* Soft green */
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      text-align: center;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome - Async Tap</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #0b0f0c; /* Deep dark green */
+        color: #60ac64; /* Soft green */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+      }
 
-    .container {
-      background-color: #1a1a1a; /* Black card */
-      padding: 50px;
-      border-radius: 16px;
-      box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
-      max-width: 400px;
-      width: 90%;
-    }
+      .container {
+        background-color: #1a1a1a; /* Black card */
+        padding: 50px;
+        border-radius: 16px;
+        box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+        max-width: 400px;
+        width: 90%;
+      }
 
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 20px;
-    }
+      h1 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+      }
 
-    p {
-      font-size: 1.1rem;
-    }
+      p {
+        font-size: 1.1rem;
+      }
 
-    .logo {
-      margin-bottom: 24px;
-    }
+      .logo {
+        margin-bottom: 24px;
+      }
 
-    .logo img {
-      max-height: 60px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <div class="logo">
-      <img src="logo-placeholder.png" alt="Async Tap Logo" />
+      .logo img {
+        max-height: none;
+        height: 270px;
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="logo">
+        <img src="asynclogo.svg" alt="Async Tap Logo" />
+      </div>
+      <h1>Signed In Successfully</h1>
+      <p>Welcome to Async Tap 👋</p>
+      <button
+        onclick="window.location.href='design.html';"
+        style="
+          padding: 10px 20px;
+          background-color: #60ac64;
+          color: #0b0f0c;
+          border: none;
+          border-radius: 8px;
+          font-size: 1rem;
+          cursor: pointer;
+        "
+      >
+        Go to Design Page
+      </button>
     </div>
-    <h1>Signed In Successfully</h1>
-    <p>Welcome to Async Tap 👋</p>
-    <button onclick="window.location.href='design.html';" style="padding: 10px 20px; background-color: #b0dab9; color: #0b0f0c; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer;">Go to Design Page</button>
-  </div>
-</body>
+  </body>
 </html>
