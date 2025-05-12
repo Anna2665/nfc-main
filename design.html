@@ -325,7 +325,10 @@
                     <li><a href="designcard.html">Design Your Card</a></li>
                     <li><a href="#Shop">Shop</a></li>
                     <li><a href="phones.html">Compatible Phones</a></li>
-                    <li><a href="register.html">Login</a></li>
+                    <li id="login-item"><a href="register.html">Login</a></li>
+        <li id="logout-item" style="display: none;">
+            <a href="#" id="logout-link">Logout</a>
+        </li>
                     <li><a href="contactinfo.html">Contact</a></li>
                     <li><a href="getdesign.html">Get Design</a></li>
             </div>
@@ -491,17 +494,17 @@
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 
     <script type="module">
-        // Import necessary Firebase SDKs
+        // Import Firebase SDKs
         import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
-        import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
         import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-firestore.js";
       
-        // Your Firebase config
+        // Firebase config
         const firebaseConfig = {
           apiKey: "AIzaSyCjnpNOZ4_79CiswFiwBk1ZYIc6-K59IJ8",
           authDomain: "nfc-cards-20f21.firebaseapp.com",
           projectId: "nfc-cards-20f21",
-          storageBucket: "nfc-cards-20f21.appspot.com",
+          storageBucket: "nfc-cards-20f21.appspot.com", // Corrected storage bucket URL
           messagingSenderId: "227066343452",
           appId: "1:227066343452:web:14fdd204de371964786fd9"
         };
@@ -511,57 +514,89 @@
         const auth = getAuth(app);
         const db = getFirestore(app);
       
-        let currentUser = null; // Save logged in user globally
+        let currentUser = null;
       
-        // 1. Check if user is logged in
+        // DOM elements
+        const loginItem = document.getElementById("login-item");
+        const logoutItem = document.getElementById("logout-item");
+        const logoutLink = document.getElementById("logout-link");
+        const submitBtn = document.querySelector('.submit-btn');
+      
+        // Handle auth state
         onAuthStateChanged(auth, (user) => {
           if (user) {
             console.log("✅ User logged in:", user.email);
             currentUser = user;
+      
+            // Navbar update
+            if (loginItem) loginItem.style.display = "none";
+            if (logoutItem) logoutItem.style.display = "inline-block";
+      
           } else {
             console.log("❌ No user. Redirecting...");
-            window.location.href = "login.html";
+            currentUser = null;
+      
+            if (loginItem) loginItem.style.display = "inline-block";
+            if (logoutItem) logoutItem.style.display = "none";
+      
+            // Redirect if on a protected page
+            const protectedPages = ["/design.html"];
+            const currentPath = window.location.pathname;
+
+            if (!user && protectedPages.some(path => currentPath.endsWith(path))) {
+            window.location.href = "register.html";
+            }
+
           }
         });
       
-        // 2. When submit button is clicked
-        document.querySelector('.submit-btn').addEventListener('click', async function(event) {
-          event.preventDefault();
+        // Logout handling
+        if (logoutLink) {
+          logoutLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("Logging you out...");
+            signOut(auth).then(() => {
+              window.location.href = "index.html";
+            });
+          });
+        }
       
-          // Get form values
-          const name = document.getElementById('user-name').value;
-          const title = document.getElementById('user-title').value;
-          const details = document.getElementById('user-details').value;
+        // Form submission (if the form exists on this page)
+        if (submitBtn) {
+          submitBtn.addEventListener('click', async function (event) {
+            event.preventDefault();
       
-          if (!name || !title || !details) {
-            alert('❗ Please fill all fields before submitting!');
-            return;
-          }
+            const name = document.getElementById('user-name').value;
+            const title = document.getElementById('user-title').value;
+            const details = document.getElementById('user-details').value;
       
-          try {
-            if (!currentUser) {
-              alert('❌ User not logged in!');
+            if (!name || !title || !details) {
+              alert('❗ Please fill all fields before submitting!');
               return;
             }
       
-            // 3. Save form data to Firestore
-            await setDoc(doc(db, "design_submissions", currentUser.uid), {
-              name: name,
-              title: title,
-              details: details,
-              submittedAt: new Date()
-            });
+            try {
+              if (!currentUser) {
+                alert('❌ User not logged in!');
+                return;
+              }
       
-            alert('✅ Your design request has been saved successfully!');
-            window.location.href = "thankyou.html";
-
-          } catch (error) {
-            console.error('Error saving design:', error);
-            alert('❌ Something went wrong. Please try again.');
-          }
-        });
+              await setDoc(doc(db, "design_submissions", currentUser.uid), {
+                name: name,
+                title: title,
+                details: details,
+                submittedAt: new Date()
+              });
+      
+              alert('✅ Your design request has been saved successfully!');
+              window.location.href = "thankyou.html";
+      
+            } catch (error) {
+              console.error('Error saving design:', error);
+              alert('❌ Something went wrong. Please try again.');
+            }
+          });
+        }
       </script>
-      
-      
-</body>
+</body>      
 </html>

@@ -1,135 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact Us - Async Tap</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, sans-serif;
-      background-color: #0b0f0c; /* Dark green */
-      color: #b0dab9;
-    }
-
-    .contact-section {
-      display: flex;
-      flex-wrap: wrap;
-      padding: 40px;
-      gap: 40px;
-      justify-content: center;
-      align-items: flex-start;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .info, .form {
-      flex: 1 1 400px;
-      background-color: #1a1a1a;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
-    }
-
-    h1 {
-      color: #b0dab9;
-      margin-bottom: 16px;
-    }
-
-    .info p {
-      line-height: 1.6;
-      font-size: 1.05rem;
-    }
-
-    .form label {
-      display: block;
-      margin: 12px 0 6px;
-      color: #b0dab9;
-    }
-
-    .form input, .form textarea {
-      width: 100%;
-      padding: 10px;
-      border-radius: 6px;
-      background-color: #2b2b2b;
-      border: 1px solid #444;
-      color: #fff;
-      font-size: 1rem;
-    }
-
-    .form textarea {
-      resize: vertical;
-      min-height: 100px;
-    }
-
-    .form button {
-      margin-top: 20px;
-      background-color: #0f5132;
-      color: #fff;
-      padding: 12px 20px;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      cursor: pointer;
-    }
-
-    .form button:hover {
-      background-color: #155d3b;
-    }
-
-    .logo {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-
-    .logo img {
-      max-height: 100px;
-    }
-
-    @media (max-width: 768px) {
-      .contact-section {
-        flex-direction: column;
-        padding: 20px;
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us - Async Tap</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: "Segoe UI", Tahoma, sans-serif;
+        background-color: #0b0f0c; /* Dark green */
+        color: #b0dab9;
       }
-    }
-  </style>
-</head>
-<body>
 
-  <div class="logo">
-    <img src="logo.png" alt="Async Tap Logo" />
-  </div>
+      .contact-section {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 40px;
+        gap: 40px;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
 
-  <div class="contact-section">
-    <div class="info">
-      <h1>Contact Us</h1>
-      <p><strong>Async Tap HQ</strong></p>
-      <p>Building 3, Qurm Business District,<br>
-         Qurm, Muscat, Oman</p>
-      <p>📞 +968 9123 4567</p>
-      <p>📧 contact@asynctap.com</p>
-      <p>🕘 Mon - Fri: 9AM to 6PM</p>
+      .info,
+      .form {
+        flex: 1 1 400px;
+        background-color: #1a1a1a;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+      }
+
+      h1 {
+        color: #b0dab9;
+        margin-bottom: 16px;
+      }
+
+      .info p {
+        line-height: 1.6;
+        font-size: 1.05rem;
+      }
+
+      .form label {
+        display: block;
+        margin: 12px 0 6px;
+        color: #b0dab9;
+      }
+
+      .form input,
+      .form textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: #2b2b2b;
+        border: 1px solid #444;
+        color: #fff;
+        font-size: 1rem;
+      }
+
+      .form textarea {
+        resize: vertical;
+        min-height: 100px;
+      }
+
+      .form button {
+        margin-top: 20px;
+        background-color: #0f5132;
+        color: #fff;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+      }
+
+      .form button:hover {
+        background-color: #155d3b;
+      }
+
+      .logo {
+        text-align: center;
+        margin-bottom: 30px;
+      }
+
+      .logo img {
+        max-height: 100px;
+      }
+
+      @media (max-width: 768px) {
+        .contact-section {
+          flex-direction: column;
+          padding: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="logo">
+      <img src="logo.png" alt="Async Tap Logo" />
     </div>
 
-    <div class="form">
-      <h1>Send a Message</h1>
-      <form>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+    <div class="contact-section">
+      <div class="info">
+        <h1>Contact Us</h1>
+        <p><strong>Async Tap HQ</strong></p>
+        <p>
+          Building 3, Qurm Business District,<br />
+          Qurm, Muscat, Oman
+        </p>
+        <p>📞 +968 9123 4567</p>
+        <p>📧 contact@asynctap.com</p>
+        <p>🕘 Mon - Fri: 9AM to 6PM</p>
+      </div>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required />
+      <div class="form">
+        <h1>Send a Message</h1>
+        <form>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required />
 
-        <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" />
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required />
 
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required></textarea>
+          <label for="phone">Phone:</label>
+          <input type="tel" id="phone" name="phone" />
 
-        <button type="submit">Send</button>
-      </form>
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Send</button>
+        </form>
+      </div>
     </div>
-  </div>
 
-</body>
+    <script>
+      const form = document.querySelector("form");
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        const data = {
+          name: form.name.value,
+          email: form.email.value,
+          phone: form.phone.value,
+          message: form.message.value,
+        };
+
+        const response = await fetch("/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(data),
+        });
+
+        if (response.ok) {
+          alert("Message sent successfully!");
+        } else {
+          alert("Error sending message.");
+        }
+
+        form.reset();
+      });
+    </script>
+  </body>
 </html>

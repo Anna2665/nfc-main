@@ -217,7 +217,8 @@
                 <li><a href="designcard.html">Design Your Card</a></li>
                 <li><a href="shop.html">Shop</a></li>
                 <li><a href="phones.html">Compatible Phones</a></li>
-                <li><a href="register.html">Login</a></li>
+                <li id="login-item"><a href="register.html">Login</a></li>
+                <li id="logout-item" style="display:none;"><a href="#" id="logout-link">Logout</a></li>
                 <li><a href="contactinfo.html">Contact</a></li>
                 <li><a href="getdesign.html">Get Design</a></li>
         </div>
@@ -696,6 +697,46 @@
                 }
             });
         });
+
     </script>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+    
+      const firebaseConfig = {
+        apiKey: "AIzaSyCjnpNOZ4_79CiswFiwBk1ZYIc6-K59IJ8",
+        authDomain: "nfc-cards-20f21.firebaseapp.com",
+        projectId: "nfc-cards-20f21",
+        storageBucket: "nfc-cards-20f21.firebasestorage.app",
+        messagingSenderId: "227066343452",
+        appId: "1:227066343452:web:14fdd204de371964786fd9"
+      };
+    
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+    
+      const loginItem = document.getElementById("login-item");
+      const logoutItem = document.getElementById("logout-item");
+      const logoutLink = document.getElementById("logout-link");
+    
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          loginItem.style.display = "none";
+          logoutItem.style.display = "inline-block";
+        } else {
+          loginItem.style.display = "inline-block";
+          logoutItem.style.display = "none";
+        }
+      });
+    
+      logoutLink.addEventListener("click", function (e) {
+        e.preventDefault();
+        alert("Logging you out...");
+        signOut(auth).then(() => {
+          window.location.href = "index.html";
+        });
+      });
+    </script>
+    
 </body>
 </html>

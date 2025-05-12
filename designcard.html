@@ -1,131 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
 
     <style>
-
-        /* Top bar socials */
-        .mainheader{
+      /* Top bar socials */
+      .mainheader {
         margin-top: 0px;
         background: linear-gradient(90deg, #1d5639, #77dd77);
         padding: 0.01rem 0.5rem;
         border-bottom: 1px solid #334155;
-        
-        }
+      }
 
-        .mainheader ul {
+      .mainheader ul {
         list-style-type: none;
         display: flex;
         gap: 1.5rem;
-        text-align:left;
-        }
+        text-align: left;
+      }
 
-        .mainheader li {
+      .mainheader li {
         display: inline-block;
-        }
+      }
 
-        .mainheader a {
+      .mainheader a {
         color: #94a3b8;
         font-size: 1rem;
         text-decoration: none;
         transition: color 0.3s ease;
-        }
+      }
 
-        .mainheader a:hover {
+      .mainheader a:hover {
         color: #ffffff;
-        }
+      }
 
+      #mainheader {
+        background-color: rgb(51, 150, 77);
+      }
 
-        body{
-            margin-top:0px;
-            font-family:'Segoe UI';
-            margin-left:auto;
-            margin-right:auto;
-            background-color: #000000
-        }
+      /*Company name and menu*/
 
-        #mainheader{
-            background-color:rgb(51, 150, 77)
-        }
-
-            
-       /*Company name and menu*/
-
-        .main {
+      .main {
         display: flex;
         justify-content: space-between;
         align-items: center;
         background-color: #1d5639;
         padding: 1rem 2rem;
         flex-wrap: wrap;
-        }
+      }
 
-        .logotitle {
+      .logotitle {
         display: flex;
         align-items: center;
         gap: 0.75rem;
-        }
+      }
 
-        .menu ul {
+      .menu ul {
         list-style: none;
         margin: 0;
         padding: 0;
         display: flex;
         gap: 2.5rem;
-        text-align:center;
+        text-align: center;
         flex-wrap: wrap;
-        justify-content:center;
-        }
+        justify-content: center;
+      }
 
-        .menu li a {
+      .menu li a {
         text-decoration: none;
         color: #ffffff;
         transition: color 0.3s ease;
         font-weight: 500;
-        font-size:1.2rem;
-    }
+        font-size: 1.2rem;
+      }
 
-        .menu li a:hover {
+      .menu li a:hover {
         color: #8ad981;
-        }
+      }
 
-        h1{
-            color:#ffffff
-        }
-        
+      h1 {
+        color: #ffffff;
+      }
 
-        /*Menu bar color and size*/
+      /*Menu bar color and size*/
 
-        header {
+      header {
         background: linear-gradient(90deg, #1d5639, #77dd77);
         padding: 0.2rem;
         text-align: left;
-        }
+      }
 
-        header h1 {
+      header h1 {
         font-size: 2.5rem;
         margin-bottom: 0.5rem;
-        }
+      }
 
-        header p {
+      header p {
         font-size: 1.2rem;
         color: #cbd5e1;
-        }
+      }
 
-        /*Designing card*/
+      /*Designing card*/
 
-        body {
+      body {
         margin: 0;
         background-color: #000; /* black background */
-        color: white;           /* white text */
-        font-family:'Nunito';
-        }
+        color: white; /* white text */
+        font-family: "Nunito";
+      }
 
-        .designcard {
+      .designcard {
         width: 100vw;
         min-height: 100vh;
         display: flex;
@@ -133,9 +123,9 @@
         justify-content: center;
         padding: 40px;
         box-sizing: border-box;
-        }
+      }
 
-        .designcard-content {
+      .designcard-content {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -143,55 +133,55 @@
         width: 100%;
         max-width: 1200px;
         gap: 30px;
-        }
+      }
 
-        .designcard-img img {
+      .designcard-img img {
         width: 100%;
         max-width: 400px;
         height: auto;
         object-fit: contain;
-        }
+      }
 
-        .designcard-text {
+      .designcard-text {
         flex: 1;
         min-width: 300px;
-        }
+      }
 
-        .designcard-text h2 {
+      .designcard-text h2 {
         font-size: 2rem;
         margin-bottom: 15px;
-        }
+      }
 
-        .designcard-text p {
+      .designcard-text p {
         font-size: 1.1rem;
         margin-bottom: 20px;
-        }
+      }
 
-        .designcard-text ul {
+      .designcard-text ul {
         padding-left: 20px;
-        }
+      }
 
-        .designcard-text li {
+      .designcard-text li {
         margin-bottom: 10px;
-        }
+      }
 
-        .price {
+      .price {
         font-size: 1.5rem;
         margin-top: 15px;
-        }
+      }
 
-        .current-price {
+      .current-price {
         color: #00ffae; /* or any highlight color */
         font-weight: bold;
         margin-right: 10px;
-        }
+      }
 
-        .original-price {
+      .original-price {
         color: #ccc;
         text-decoration: line-through;
-        }
+      }
 
-        .design-btn {
+      .design-btn {
         display: inline-block;
         margin-top: 20px;
         padding: 12px 24px;
@@ -201,68 +191,108 @@
         text-decoration: none;
         border-radius: 8px;
         transition: background-color 0.3s ease;
-        }
+      }
 
-        .design-btn:hover {
+      .design-btn:hover {
         background-color: #00d89c;
-        }
-
-
-
-
-
-        
-
+      }
     </style>
-</head>
-<body>
-   
-
+  </head>
+  <body>
     <div class="main">
-        <div class="logotitle">
+      <div class="logotitle">
         <img src="icons8-card-64.png" alt="Logo" />
         <h1>AsyncTap</h1>
-        </div>
-    
-        
-        <div class="menu">
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="designcard.html">Design Your Card</a></li>
-                <li><a href="#Shop">Shop</a></li>
-                <li><a href="phones.html">Compatible Phones</a></li>
-                <li><a href="register.html">Login</a></li>
-                <li><a href="contactinfo.html">Contact</a></li>
-                <li><a href="getdesign.html">Get Design</a></li>
-        </div>
+      </div>
+
+      <div class="menu">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="designcard.html">Design Your Card</a></li>
+          <li><a href="shop.html">Shop</a></li>
+          <li><a href="phones.html">Compatible Phones</a></li>
+          <li id="login-item"><a href="register.html">Login</a></li>
+          <li id="logout-item" style="display: none">
+            <a href="#" id="logout-link">Logout</a>
+          </li>
+          <li><a href="contactinfo.html">Contact</a></li>
+          <li><a href="getdesign.html">Get Design</a></li>
+        </ul>
+      </div>
     </div>
 
     <section class="designcard">
-        <div class="designcard-content">
-            <div class="designcard-img">
-                <img src="nfccard.png" alt="NFC card example" />
-              </div>
-              
-            <div class="designcard-text">
-                <h2>NFC Business Card - NFC Digital Card</h2>
-                <p>Share your Contact Details, Social Media, and Make an Impact with TapMo India - the Premier NFC Business Card!</p>
-                    <ul>
-                        <li>✅ One-Time Payment, No Monthly Fees</li>
-                        <li>✅ Compatible with iOS & Android - No App Needed</li>
-                        <li>✅ One Card, One Profile, Unlimited Sharing<br></li>
-                    </ul>
-
-                    <div class="price">
-                        <span class="current-price">₹999.00</span>
-                        <span class="original-price">₹2,199.00</span>
-                    </div>
-                
-                    <a href="design.html" class="design-btn">Design Your Card</a>
-            </div>
-
-            
-              
+      <div class="designcard-content">
+        <div class="designcard-img">
+          <img src="nfccard.png" alt="NFC card example" />
         </div>
+
+        <div class="designcard-text">
+          <h2>NFC Business Card - NFC Digital Card</h2>
+          <p>
+            Share your Contact Details, Social Media, and Make an Impact with
+            TapMo India - the Premier NFC Business Card!
+          </p>
+          <ul>
+            <li>✅ One-Time Payment, No Monthly Fees</li>
+            <li>✅ Compatible with iOS & Android - No App Needed</li>
+            <li>✅ One Card, One Profile, Unlimited Sharing<br /></li>
+          </ul>
+
+          <div class="price">
+            <span class="current-price">₹999.00</span>
+            <span class="original-price">₹2,199.00</span>
+          </div>
+
+          <a href="design.html" class="design-btn">Design Your Card</a>
+        </div>
+      </div>
     </section>
-</body>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+        signOut,
+      } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-auth.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyCjnpNOZ4_79CiswFiwBk1ZYIc6-K59IJ8",
+        authDomain: "nfc-cards-20f21.firebaseapp.com",
+        projectId: "nfc-cards-20f21",
+        storageBucket: "nfc-cards-20f21.firebasestorage.app",
+        messagingSenderId: "227066343452",
+        appId: "1:227066343452:web:14fdd204de371964786fd9",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const auth = getAuth(app);
+      document.addEventListener("DOMContentLoaded", () => {
+        const loginItem = document.getElementById("login-item");
+        const logoutItem = document.getElementById("logout-item");
+        const logoutLink = document.getElementById("logout-link");
+
+        onAuthStateChanged(auth, (user) => {
+          if (user) {
+            loginItem.style.display = "none";
+            logoutItem.style.display = "inline-block";
+          } else {
+            loginItem.style.display = "inline-block";
+            logoutItem.style.display = "none";
+          }
+        });
+
+        if (logoutLink) {
+          logoutLink.addEventListener("click", function (e) {
+            e.preventDefault();
+            alert("Logging you out...");
+            signOut(auth).then(() => {
+              window.location.href = "index.html";
+            });
+          });
+        }
+      });
+    </script>
+  </body>
 </html>
