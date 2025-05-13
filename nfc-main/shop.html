@@ -86,21 +86,22 @@
       }
 
       .card-container {
-        display: flex;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.5rem;
-        justify-content: center;
+        justify-items: center;
       }
 
       .product-card {
         background-color: #1a1a1a;
         border-radius: 12px;
         padding: 1rem;
-        flex: 1 1 300px;
-        max-width: 300px;
+        width: 100%;
+        max-width: 280px;
         color: #ffffff;
         box-shadow: 0 4px 10px rgba(67, 155, 114, 0.953);
         transition: transform 0.2s ease;
+        text-align: center;
       }
 
       .product-card:hover {
@@ -130,6 +131,7 @@
         font-size: 0.9rem;
         margin-left: 5px;
       }
+
 
       @media screen and (max-width: 600px) {
         .product-card {
@@ -196,6 +198,16 @@
           <h3>Gold NFC Business Card</h3>
           <p>₹1,199.00 <span>₹1,999.00</span></p>
         </div>
+        <div class="product-card">
+          <img src="whitenfc.jpg" alt="Gold Metal Card" />
+          <h3>White Metal NFC Buisness Card</h3>
+          <p>₹999.00 <span>₹1,799.00</span></p>
+        </div>
+        <div class="product-card">
+          <img src="silvernfc.jpeg" alt="Gold Metal Card" />
+          <h3>Silver NFC Business Card</h3>
+          <p>₹1,199.00 <span>₹1,999.00</span></p>
+        </div>
       </div>
     </section>
 
@@ -212,6 +224,16 @@
           <h3>Custom QR PVC Card</h3>
           <p>₹699.00 <span>₹999.00</span></p>
         </div>
+        <div class="product-card">
+          <img src="googlereview.webp" alt="Custom PVC Card" />
+          <h3>Google Review NFC PVC Card</h3>
+          <p>₹599.00 <span>₹999.00</span></p>
+        </div>
+        <div class="product-card">
+          <img src="professionnfc.webp" alt="Custom PVC Card" />
+          <h3>Custom QR based on profession PVC Card</h3>
+          <p>₹699.00 <span>₹999.00</span></p>
+        </div>
       </div>
     </section>
 
@@ -226,6 +248,16 @@
         <div class="product-card">
           <img src="bamboowood.jpg" alt="Bamboo Wood Card" />
           <h3>Bamboo Wood NFC Card</h3>
+          <p>₹1,499.00 <span>₹2,199.00</span></p>
+        </div>
+        <div class="product-card">
+          <img src="blackwalnutnfc.jpeg" alt="Bamboo Wood Card" />
+          <h3>Black Walnut Wood NFC Card</h3>
+          <p>₹1,499.00 <span>₹2,199.00</span></p>
+        </div>
+        <div class="product-card">
+          <img src="wooden.jpg" alt="Bamboo Wood Card" />
+          <h3>NFC Enabled Wooden Buisness Card</h3>
           <p>₹1,499.00 <span>₹2,199.00</span></p>
         </div>
       </div>
