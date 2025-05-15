@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
         <title>AsynchTap</title>
          <link rel="icon" type="image/png" href="icons8-card-32 (1).png">
@@ -9,319 +11,419 @@
 
 
 
-        <style>
-
-            /* Top bar socials */
-            .mainheader{
-            margin-top: 0px;
-            background: linear-gradient(90deg, #1d5639, #77dd77);
-            padding: 0.01rem 0.5rem;
-            border-bottom: 1px solid #334155;
-            
-            }
-
-            .mainheader ul {
-            list-style-type: none;
-            display: flex;
-            gap: 1.5rem;
-            text-align:left;
-            }
-
-            .mainheader li {
-            display: inline-block;
-            }
-
-            .mainheader a {
-            color: #94a3b8;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-family: 'Nunito';
-            }
-
-            .mainheader a:hover {
-            color: #ffffff;
-            }
-
-
-            body{
-                margin-top:0px;
-                font-family:'Nunito';
-                margin-left:auto;
-                margin-right:auto;
-                background-color: #000000
-            }
-
-            #mainheader{
-                background-color:rgb(51, 150, 77)
-            }
-
-          /*Company name and menu*/
-
-        .main {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #1d5639;
-        padding: 0.5rem 1.5rem;
-        height: 80px;
-      }
-
-      .logotitle {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0;
-        margin: 0;
-      }
-
-      .logotitle img {
-        width: 230px; /* or 200px, depending on your image design */
-        height: auto;
-        display: block;
-      }
-
-      .menu ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        gap: 3rem; /* Increased gap between menu items */
-        align-items: center;
-      }
-
-      .menu li a {
-        text-decoration: none;
-        color: #ffffff;
-        font-weight: 500;
-        font-size: 1.25rem; /* Increased font size */
-        transition: color 0.3s ease;
-      }
+         <style>
+          /* Base styles */
+          body {
+              margin: 0;
+              font-family: 'Nunito', sans-serif;
+              background-color: #000000;
+              color: #ffffff;
+              overflow-x: hidden;
+          }
       
-
-            .menu li a:hover {
-            color: #8ad981;
-            }
-
-            h1{
-                color:#ffffff
-            }
-
-
-            /*main content page*/
-            .advert {
-            background-color: #000000;
-            padding: 4rem 2rem;
-            color: white;
-            }
-
-            .advert-content {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            max-width: 1200px;
-            margin: auto;
-            }
-
-            .advert-text {
-            flex: 1 1 50%;
-            padding-right: 2rem;
-            }
-
-            .advert-text h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            }
-
-            .advert-text p {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            }
-
-            .advert-image {
-            flex: 1 1 40%;
-            text-align: center;
-            
-            }
-
-            .advert-image img {
-            max-width: 100%;
-            height: auto;
-            }
-            
-            
-
-            /*Menu bar color and size*/
-
-            header {
-            background: linear-gradient(90deg, #1d5639, #77dd77);
-            padding: 0.2rem;
-            text-align: left;
-            }
-
-            header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 0.5rem;
-            }
-
-            header p {
-            font-size: 1.2rem;
-            color: #cbd5e1;
-            }
-
-            /*Trusted section*/
-            .trusted-section {
-            background-color: #456546;
-            color: #f1f5f9;
-            padding: 4rem 2rem;
-            text-align: center;
-            }
-
-            .trusted-content h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            }
-
-            .trusted-content p {
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 2rem;
-            }
-
-            /*Designing card*/
-
-            .design-assist {
-            background-color: #000000;
-            color: #f8fafc;
-            padding: 4rem 2rem;
-            }
-
-            .design-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 2rem;
-            max-width: 1200px;
-            margin: auto;
-            }
-
-            .design-text {
-            flex: 1 1 500px;
-            }
-
-            .design-text h2 {
-            font-size: 2rem;
-            color: #7bdb91;
-            margin-bottom: 0.5rem;
-            }
-
-            .design-text h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            }
-
-            .design-text ul {
-            margin: 1rem 0;
-            padding-left: 1rem;
-            }
-
-            .design-text li {
-            margin-bottom: 0.5rem;
-            }
-
-            .cta-btn {
-            background-color: #7bdb91;
-            color: black;
-            padding: 0.75rem 1.5rem;
-            font-weight: bold;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            }
-
-            .cta-btn:hover {
-            background-color: #5dc877;
-            }
-
-            .design-img {
-            flex: 1 1 300px;
-            text-align: center;
-            }
-
-            .design-img img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            }
-
-            /*More info on the buisness card*/
-
-            .buisnesscard-section{
-              background-color:#1d5639;
-              color:#f1f5f9;
-              padding:4rem 2rem;
-              text-align:center;
-
-            }
-
-            .buisnesscard h2{
-              font-size:2.5rem;
-              text-align:center;
-              margin-bottom:1rem;
-
-            }
-            .buisnesscard h3{
-              font-size:1.5rem;
-              text-align:center;
-              margin-bottom:1rem;
-
-            }
-
-            .buisnesscard  p{
-              font-size:1rem;
-              /*text-align:center*/;
-              margin-bottom:1rem;
-              max-width: 1200px;
-              margin: 0 auto 4rem;
-              
-
-            }
-
-
-            /*Footer*/
-
-            footer {
-            background-color: #000000;
-            text-align: center;
-            padding: 1rem;
-            font-size: 0.9rem;
-            color: #94a3b8;
-
-            }
-
-            .whatsapp-float {
-          position: fixed;
-          bottom: 20px;
-          right: 20px;
-          z-index: 1000;
-        }
-
-        .whatsapp-float img {
-          width: 60px;
-          height: 60px;
-          border-radius: 50%;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-          transition: transform 0.3s;
-        }
-
-        .whatsapp-float img:hover {
-          transform: scale(1.1);
-        }
-        
-        </style>
+          /* Top bar socials */
+          .mainheader {
+              background: linear-gradient(90deg, #1d5639, #77dd77);
+              padding: 0.5rem;
+              border-bottom: 1px solid #334155;
+          }
+      
+          .mainheader ul {
+              list-style-type: none;
+              display: flex;
+              gap: 1rem;
+              padding: 0;
+              margin: 0;
+              justify-content: center;
+              flex-wrap: wrap;
+          }
+      
+          .mainheader li {
+              display: inline-block;
+          }
+      
+          .mainheader a {
+              color: #94a3b8;
+              font-size: 0.9rem;
+              text-decoration: none;
+              transition: color 0.3s ease;
+          }
+      
+          .mainheader a:hover {
+              color: #ffffff;
+          }
+      
+          /* Mobile menu styles */
+          .main {
+              display: flex;
+              flex-direction: column;
+              background-color: #1d5639;
+              padding: 1rem;
+              position: relative;
+          }
+      
+          .logotitle img {
+              width: 180px;
+              height: auto;
+          }
+      
+          .menu-toggle {
+              display: block;
+              position: absolute;
+              top: 1.5rem;
+              right: 1rem;
+              cursor: pointer;
+              z-index: 1000;
+          }
+      
+          .menu-toggle span {
+              display: block;
+              width: 25px;
+              height: 3px;
+              margin: 5px 0;
+              background-color: white;
+              transition: all 0.3s ease;
+          }
+      
+          .menu {
+              display: none;
+              width: 100%;
+          }
+      
+          .menu.active {
+              display: block;
+          }
+      
+          .menu ul {
+              list-style: none;
+              margin: 1rem 0 0 0;
+              padding: 0;
+              display: flex;
+              flex-direction: column;
+              gap: 0.5rem;
+          }
+      
+          .menu li {
+              padding: 0.5rem 0;
+          }
+      
+          .menu li a {
+              text-decoration: none;
+              color: #ffffff;
+              font-weight: 500;
+              font-size: 1rem;
+              transition: color 0.3s ease;
+              display: block;
+              padding: 0.5rem;
+          }
+      
+          .menu li a:hover {
+              color: #8ad981;
+              background-color: rgba(0,0,0,0.1);
+              border-radius: 4px;
+          }
+      
+          /* Main content sections */
+          .advert {
+              background-color: #000000;
+              padding: 2rem 1rem;
+          }
+      
+          .advert-content {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+          }
+      
+          .advert-text {
+              text-align: center;
+              margin-bottom: 2rem;
+          }
+      
+          .advert-text h2 {
+              font-size: 1.8rem;
+              margin-bottom: 1rem;
+          }
+      
+          .advert-text p {
+              font-size: 1rem;
+              line-height: 1.6;
+          }
+      
+          .advert-image img {
+              max-width: 100%;
+              height: auto;
+          }
+      
+          /* Trusted section */
+          .trusted-section {
+              background-color: #456546;
+              color: #f1f5f9;
+              padding: 2rem 1rem;
+              text-align: center;
+          }
+      
+          .trusted-content h2 {
+              font-size: 1.8rem;
+              margin-bottom: 1rem;
+          }
+      
+          .trusted-content p {
+              font-size: 1rem;
+              margin: 0 auto 1rem;
+          }
+      
+          /* Designing card section */
+          .design-assist {
+              background-color: #000000;
+              color: #f8fafc;
+              padding: 2rem 1rem;
+          }
+      
+          .design-content {
+              display: flex;
+              flex-direction: column;
+              gap: 2rem;
+          }
+      
+          .design-text h2 {
+              font-size: 1.5rem;
+              color: #7bdb91;
+              margin-bottom: 0.5rem;
+          }
+      
+          .design-text h3 {
+              font-size: 1.2rem;
+              margin-bottom: 1rem;
+          }
+      
+          .design-text ul {
+              margin: 1rem 0;
+              padding-left: 1.5rem;
+          }
+      
+          .design-text li {
+              margin-bottom: 0.5rem;
+          }
+      
+          .cta-btn {
+              background-color: #7bdb91;
+              color: black;
+              padding: 0.75rem 1.5rem;
+              font-weight: bold;
+              border: none;
+              border-radius: 8px;
+              cursor: pointer;
+              transition: all 0.3s ease;
+              display: inline-block;
+              margin-top: 1rem;
+          }
+      
+          .cta-btn:hover {
+              background-color: #5dc877;
+              transform: scale(1.05);
+          }
+      
+          .design-img img {
+              max-width: 100%;
+              height: auto;
+              border-radius: 12px;
+          }
+      
+          /* Business card section */
+          .buisnesscard-section {
+              background-color: #1d5639;
+              color: #f1f5f9;
+              padding: 2rem 1rem;
+              text-align: center;
+          }
+      
+          .buisnesscard h2 {
+              font-size: 1.8rem;
+              margin-bottom: 1rem;
+          }
+      
+          .buisnesscard h3 {
+              font-size: 1.2rem;
+              margin-bottom: 1rem;
+          }
+      
+          .buisnesscard p {
+              font-size: 1rem;
+              margin-bottom: 1rem;
+          }
+      
+          /* Footer */
+          .site-footer {
+              background-color: #111;
+              color: #ccc;
+              padding: 1.5rem 1rem;
+              text-align: center;
+          }
+      
+          .site-footer a {
+              color: #4CAF50;
+              text-decoration: none;
+              font-size: 1rem;
+          }
+      
+          .site-footer a:hover {
+              text-decoration: underline;
+          }
+      
+          .site-footer small {
+              color: #aaa;
+              margin-top: 0.5rem;
+              font-size: 0.8rem;
+              display: block;
+          }
+      
+          /* WhatsApp float */
+          .whatsapp-float {
+              position: fixed;
+              bottom: 20px;
+              right: 20px;
+              z-index: 1000;
+          }
+      
+          .whatsapp-float img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+              transition: transform 0.3s;
+          }
+      
+          .whatsapp-float img:hover {
+              transform: scale(1.1);
+          }
+      
+          /* Tablet styles */
+          @media (min-width: 768px) {
+              .main {
+                  flex-direction: row;
+                  justify-content: space-between;
+                  align-items: center;
+                  padding: 0 1.5rem;
+                  height: 80px;
+              }
+      
+              .menu-toggle {
+                  display: none;
+              }
+      
+              .menu {
+                  display: block;
+                  width: auto;
+              }
+      
+              .menu ul {
+                  flex-direction: row;
+                  margin: 0;
+                  gap: 1rem;
+              }
+      
+              .menu li {
+                  padding: 0;
+              }
+      
+              .menu li a {
+                  padding: 0.5rem;
+              }
+      
+              .advert {
+                  padding: 3rem 2rem;
+              }
+      
+              .advert-text h2 {
+                  font-size: 2rem;
+              }
+      
+              .design-content {
+                  flex-direction: row;
+                  align-items: center;
+                  max-width: 1200px;
+                  margin: 0 auto;
+              }
+      
+              .design-text {
+                  padding-right: 2rem;
+              }
+      
+              .buisnesscard h2 {
+                  font-size: 2rem;
+              }
+          }
+      
+          /* Desktop styles */
+          @media (min-width: 1024px) {
+              .mainheader ul {
+                  justify-content: flex-start;
+                  padding-left: 2rem;
+              }
+      
+              .logotitle img {
+                  width: 230px;
+              }
+      
+              .menu ul {
+                  gap: 2rem;
+              }
+      
+              .menu li a {
+                  font-size: 1.1rem;
+              }
+      
+              .advert-content {
+                  flex-direction: row;
+                  max-width: 1200px;
+                  margin: 0 auto;
+              }
+      
+              .advert-text {
+                  text-align: left;
+                  flex: 1;
+                  padding-right: 2rem;
+              }
+      
+              .advert-text h2 {
+                  font-size: 2.5rem;
+              }
+      
+              .advert-text p {
+                  font-size: 1.2rem;
+              }
+      
+              .trusted-content h2 {
+                  font-size: 2.5rem;
+              }
+      
+              .trusted-content p {
+                  font-size: 1.1rem;
+                  max-width: 600px;
+              }
+      
+              .design-text h2 {
+                  font-size: 2rem;
+              }
+      
+              .design-text h3 {
+                  font-size: 1.5rem;
+              }
+      
+              .buisnesscard h2 {
+                  font-size: 2.5rem;
+              }
+      
+              .buisnesscard h3 {
+                  font-size: 1.5rem;
+              }
+      
+              .site-footer {
+                  padding: 2rem 1rem;
+              }
+          }
+      </style>
     </head>
 
     <body>
@@ -341,7 +443,12 @@
             <div class="logotitle">
               <img src="Final Artboard 3 (2).svg" alt="Logo" />
             </div>
-        
+
+            <div class="menu-toggle">
+              <span></span>
+              <span></span>
+              <span></span>
+          </div>
             
             <div class="menu">
                 <ul>
@@ -353,6 +460,8 @@
                     <li><a href="getdesign.html">Get Design</a></li>
                     <li id="login-item"><a href="register.html">Login</a></li>
                     <li id="logout-item" style="display:none;"><a href="#" id="logout-link">Logout</a></li>
+                
+                  </ul>
             </div>
         </div>
 
@@ -369,14 +478,14 @@
             </div>
           </section>
           
-        <!--Companies*/-->
+        <!--Companies-->
         <section class="trusted-section">
             <div class="trusted-content">
               <h2>Why Top Companies Trust AsyncTap</h2>
               <p>Reliable. Fast. Secure. We're helping brands make smarter connections through NFC-powered cards.</p>
           </section>
 
-        /*Info about designing card*/
+        <!-- /*Info about designing card*/ -->
         <section class="design-assist">
             <div class="design-content">
               <div class="design-text">
@@ -397,7 +506,7 @@
             </div>
         </section>
 
-        /*More info abt the card*/
+        <!-- /*More info abt the card*/ -->
         <section class="buisnesscard-section">
           <div class="buisnesscard">
             <h3>Premium NFC Buisness Card</h3>
@@ -407,11 +516,14 @@
        </section>
              
           
-        <footer>
-            <p style="font-size:20px; text-align:left; display: block;">Contact us:<br><a href="mailto:support@asyncsolution.com" style="color:green; font-size:20px; text-align:left; display: block;" >Email</a></p>
-            <small> &copy; 2025 NFC Connect — Powered by Tap Tech. All rights reserved. </small>
-            
-        </footer>
+       <footer class="site-footer">
+        <p><strong>Contact us:</strong><br>
+          <a href="mailto:support@asyncsolution.com">support@asyncsolution.com</a>
+        </p>
+        <small>&copy; 2025 NFC Connect — Powered by Tap Tech. All rights reserved.</small>
+      </footer>
+      
+    
 
         <script type="module">
           import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
@@ -451,6 +563,17 @@
             });
           });
         </script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+              const menuToggle = document.querySelector('.menu-toggle');
+              const menu = document.querySelector('.menu');
+              
+              menuToggle.addEventListener('click', function() {
+                  menu.classList.toggle('active');
+                  this.classList.toggle('active');
+              });
+          });
+      </script>
 
         <a
         href="https://wa.me/918921850756" 

@@ -300,18 +300,99 @@
       }
 
       @media (max-width: 768px) {
-        .designer-container {
-          flex-direction: column;
-        }
+  .designer-container {
+    flex-direction: column;
+  }
 
-        .whatsapp-float {
-          bottom: 20px;
-          right: 20px;
-          width: 50px;
-          height: 50px;
-          font-size: 24px;
-        }
-      }
+  .card-display {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+  }
+  
+  /* Ensure main header doesn't overflow */
+  .main {
+    padding: 0.5rem 1rem;
+  }
+  
+  /* Make logo smaller on mobile */
+  .logotitle img {
+    width: 180px;
+  }
+}
+
+      /* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.hamburger div {
+  width: 30px;
+  height: 3px;
+  background-color: white;
+  margin: 5px 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile menu styles */
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+  }
+
+  .menu ul {
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    width: 100%;
+    height: calc(100vh - 80px);
+    background-color: #1d5639;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 2rem;
+    padding-top: 2rem;
+    transition: left 0.5s ease;
+    z-index: 1000;
+  }
+
+  .menu ul.active {
+    left: 0;
+  }
+
+  .menu li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .menu li a {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    display: block;
+  }
+}
+
+/* Toggle animation for hamburger */
+.hamburger.active div:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.hamburger.active div:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active div:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
     </style>
   </head>
   <body>
@@ -440,6 +521,12 @@ document.getElementById("logout-link").addEventListener("click", (e) => {
     <div class="main">
       <div class="logotitle">
         <img src="Final Artboard 3 (2).svg" alt="Logo" />
+      </div>
+
+      <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
 
       <div class="menu">
@@ -728,6 +815,23 @@ document.getElementById("logout-link").addEventListener("click", (e) => {
           document.getElementById("preview-details").textContent =
             this.value || "Phone: 123-456-7890\nEmail: you@example.com";
         });
+
+        // Hamburger menu functionality
+const hamburger = document.getElementById('hamburger');
+const menu = document.querySelector('.menu ul');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  menu.classList.toggle('active');
+});
+
+// Close menu when clicking on a link
+document.querySelectorAll('.menu li a').forEach(link => {
+  link.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    menu.classList.remove('active');
+  });
+});
 
     </script>
 

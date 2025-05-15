@@ -44,6 +44,15 @@ submit.addEventListener("click", function (event){
       alert(error.message);
     });
 
+    setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    return signInWithEmailAndPassword(auth, email, password);
+  })
+  .catch((error) => {
+    console.error("Login error:", error);
+  });
+
+
 })
 
 
